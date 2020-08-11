@@ -2,6 +2,7 @@
   - [Blank theme](#blank-theme)
     - [File structure](#file-structure)
   - [Plugins](#plugins)
+- [Install Gatsby](#install-gatsby)
 
 # Initial state
 
@@ -32,3 +33,8 @@ Username: `wordpress` Password: `wordpress`
 `WP GraphQL` - `WP Gatsby` dependency
 
 `Yoast SEO` - manipulate meta tags
+
+# Install Gatsby
+
+From project root directory run
+`npx gatsby new gatsby`
