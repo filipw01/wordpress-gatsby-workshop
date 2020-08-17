@@ -101,8 +101,10 @@ Check if you can see the data in GraphiQL
 
 ## Generate pages for posts
 
+Let's get familiar with GraphQL. This is our query for posts
+
 ```gql
-{
+query {
   allWpPost {
     nodes {
       author {
@@ -127,4 +129,51 @@ Check if you can see the data in GraphiQL
     }
   }
 }
+```
+
+In `gatsby-node.js` use 
+```js
+const path = require("path")
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  const articleTemplate = path.resolve(`src/templates/article.js`)
+  const postsData = await graphql(`
+    /* Insert GraphQL query */
+  `)
+
+  postsData.data.allWpPost.nodes.forEach(node => {
+    createPage({
+      path: `${node.uri}`,
+      component: articleTemplate,
+      context: {
+        data: node,
+      },
+    })
+  })
+}
+```
+
+For template use 
+
+```jsx
+import React from "react"
+import { Link } from "gatsby"
+
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+const Article = ({ pageContext }) => {
+  const { title, excerpt } = pageContext.data
+  return (
+    <Layout>
+      <SEO title={title} />
+      <h1>{title}</h1>
+      <p dangerouslySetInnerHTML={{ __html: excerpt }}></p>
+      <Link to="/">Go back to the homepage</Link>
+    </Layout>
+  )
+}
+
+export default Article
 ```
