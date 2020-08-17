@@ -91,7 +91,7 @@ Add
 ```js
 {
   resolve: `gatsby-source-wordpress-experimental`,
-	options: {
+  options: {
     url: `http://localhost:8000/graphql`
   },
 },
@@ -101,7 +101,7 @@ Check if you can see the data in GraphiQL
 
 ## Generate pages for posts
 
-```
+```gql
 {
   allWpPost {
     nodes {
@@ -123,7 +123,7 @@ Check if you can see the data in GraphiQL
         }
       }
       uri
-      content
+      excerpt
     }
   }
 }
