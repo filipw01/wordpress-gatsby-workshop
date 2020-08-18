@@ -38,7 +38,9 @@ Username: `wordpress` Password: `wordpress`
 
 `JAMstack Deployments` - add webhook deploy button
 
-`CMB2` - handle metaboxes (alternatively `ACF`)
+`ACF` - handle metaboxes (for now `CMB2` needs more workaround)
+
+`WPGraphQL for Advanced Custom Fields` - expose ACF to GraphQL API
 
 `WP Gatsby` - connect wordpress to gatsby
 
@@ -190,4 +192,123 @@ export default Article
 
 Clarify any doubts regarding React and JavaScript
 
-Now create blog tiles on homepage
+Make sure `gatsby-image`, `Link`, `dangerouslySetInnerHTML`, `Layout` and `SEO` is clear.
+
+Now create blog tiles on homepage with CSS modules
+
+## Pull and handle data from Yoast SEO
+
+First let's make Gatsby aware of WordPress page templates
+
+Add this to your `functions.php`
+```php
+add_action('graphql_register_types', function () {
+    register_graphql_field('Page', 'pageTemplate', [
+        'type' => 'String',
+        'description' => 'WordPress Page Template',
+        'resolve' => function ($page) {
+            return get_page_template_slug($page->pageId);
+        },
+    ]);
+});
+```
+
+Now we can extend Homepage query 
+```gql
+wpPage(pageTemplate: {eq: "page-templates/homepage.php"}) {
+    seo {
+        metaDesc
+        opengraphDescription
+        opengraphTitle
+        opengraphType
+        title
+    }
+}
+```
+
+Handle received data in `SEO` component (perhaps `seo` and `path` props)
+
+Do the same for generated article pages
+
+## Pull and handle ACF data
+
+There is a [bug](https://github.com/wp-graphql/wp-graphql-acf/issues/76) with custom fields for only some pages/posts.
+So for now you have to add custom fields for whole post type.
+
+Using `ACF` create metaboxes and show in GraphQL
+
+## Setting up continuous deployment on CircleCI
+
+Create `.circleci` directory in root and `config.yml` file in it with the following content
+```yaml
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/tech_blog/gatsby
+    steps:
+      - checkout:
+          path: ~/tech_blog
+      - restore_cache:
+          keys:
+            # Find a cache corresponding to this specific package-lock.json
+            - v2-npm-deps-{{ checksum "package-lock.json" }}
+            # Fallback cache to be used
+            - v2-npm-deps-
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - save_cache:
+          key: v2-npm-deps-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Gatsby Build
+          command: npm run build
+      - run:
+          name: Add ssh host
+          command: ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
+      - run:
+          name: Save wordpress admin panel
+          command: ssh $SSH_USER@$SSH_HOST "cp -R /home/blueowlp/domains/techblog.com/public_html/admin /home/blueowlp/domains/techblog.com/tmp"
+      - run:
+          name: Save .htaccess
+          command: ssh $SSH_USER@$SSH_HOST "cp -R /home/blueowlp/domains/techblog.com/public_html/.htaccess /home/blueowlp/domains/techblog.com/tmp"
+      - run:
+          name: Remove existing files
+          command: ssh $SSH_USER@$SSH_HOST "rm -Rf /home/blueowlp/domains/techblog.com/public_html/*"
+      - run:
+          name: Restore wordpress admin panel
+          command: ssh $SSH_USER@$SSH_HOST "mv /home/blueowlp/domains/techblog.com/tmp/admin /home/blueowlp/domains/techblog.com/public_html"
+      - run:
+          name: Restore .htaccess
+          command: ssh $SSH_USER@$SSH_HOST "mv /home/blueowlp/domains/techblog.com/tmp/.htaccess /home/blueowlp/domains/techblog.com/public_html"
+      - run:
+          name: scp files
+          command: scp -r public/* "$SSH_USER@$SSH_HOST:/home/blueowlp/domains/techblog.com/public_html/"
+```
+
+## My reflections
+
+The old vs the new gatsby-source-wordpress plugin
+
+### gatsby-source-wordpress (soon deprecated)
+
+* Advantages
+    * Easy to add CMB2 through REST API
+    * Page templates working out of the box
+* Drawbacks
+    * Limited access to WordPress data - no settings, no users 
+    * Rough and inconsistent API - returning prohibited empty string instead of null, images randomly returning null.
+    I had to use custom normalizer function
+    * Additional Plugins to show Menu, Yoast in REST and then manually handle it from endpoints
+
+### gatsby-source-wordpress-experimental
+
+* Advantages
+    * Integration with menus, users, settings out of the box
+    * Easy integration with Yoast SEO
+    * Still receiving new functions
+* Drawbacks
+    * For now no way to easily integrate with CMB2 and limited integration with ACF
