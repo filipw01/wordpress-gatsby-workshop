@@ -1,7 +1,5 @@
 <?php
 
-require get_template_directory() . '/metaboxes/metaboxes.php';
-
 add_theme_support( 'menus' );
 add_theme_support( 'post-thumbnails' );
 
@@ -9,14 +7,14 @@ add_theme_support( 'post-thumbnails' );
 $ciUrl = '';
 $ciToken = '';
 add_action( 'admin_bar_menu', 'add_circle_ci_badge',999 );
-function add_circle_ci_badge($admin_bar) {         
+function add_circle_ci_badge($admin_bar) {
           $args = array(
                 'id'     => 'CircleCI',
                 'title'  => '<img style="padding: 6px 0" src="' . $ciUrl . '.svg?style=svg&circle-token=' . $ciToken . '" alt=""/>',
                 'href'   => $ciUrl,
                 'meta'   => false
             );
-            $admin_bar->add_node( $args );       
+            $admin_bar->add_node( $args );
 }
 
 register_nav_menus( array(
@@ -36,7 +34,7 @@ function register_custom_post_types() {
 
 add_action( 'init', 'register_custom_taxonomies' );
 function register_custom_taxonomies() {
-     
+
     $labels = array(
         'name'              => 'Project categories',
         'singular_name'     => 'Project category',
@@ -47,7 +45,7 @@ function register_custom_taxonomies() {
         'add_new_item'      => 'Add New Project category',
         'menu_name'         => 'Project categories',
     );
-     
+
     $args = array(
         'labels' => $labels,
         'hierarchical' => true,
@@ -56,7 +54,7 @@ function register_custom_taxonomies() {
         'show_admin_column' => true,
         'show_in_rest' => true,
     );
-     
+
     register_taxonomy( 'project-taxonomy', array( 'project' ), $args);
 
 }
