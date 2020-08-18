@@ -34,6 +34,8 @@ Username: `wordpress` Password: `wordpress`
 
 `Yoast SEO` - manipulate meta tags
 
+`WPGraphql Yoast Seo` - expose Yoast SEO to GraphQL API
+
 # Install Gatsby
 
 From project root directory run
