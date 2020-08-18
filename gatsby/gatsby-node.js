@@ -32,12 +32,18 @@ exports.createPages = async ({ graphql, actions }) => {
           }
           uri
           content
+          seo {
+            metaDesc
+            opengraphDescription
+            opengraphTitle
+            opengraphType
+            title
+          }
         }
       }
     }
   `)
 
-  console.log(postsData)
   postsData.data.allWpPost.nodes.forEach(node => {
     createPage({
       path: `${node.uri}`,

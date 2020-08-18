@@ -12,7 +12,7 @@ export function BlogTile({ title, fixedImage, link, author, excerpt, date }) {
           color: "white",
         }}
       >
-        <Img style={{ width: "100%" }} fixed={fixedImage} />
+        <Img style={{ width: "100%" }} fixed={fixedImage} alt="" />
         <div className={style.infoBar}>
           <span>{author}</span>
           <span>{date}</span>

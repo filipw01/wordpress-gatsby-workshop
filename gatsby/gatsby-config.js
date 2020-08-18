@@ -3,6 +3,8 @@ module.exports = {
     title: `Tech Blog`,
     description: `All the tech news in one place`,
     author: `WordPress`,
+    url: `https://techblog.com`,
+    lang: `eng`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

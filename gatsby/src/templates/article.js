@@ -9,8 +9,8 @@ const Article = ({ pageContext }) => {
   const { title, content, featuredImage } = pageContext.data
   return (
     <Layout>
-      <SEO title={title} />
-      <Img fixed={featuredImage.node.localFile.childImageSharp.fixed} />
+      <SEO seo={pageContext.data.seo} path={pageContext.data.uri} />
+      <Img fixed={featuredImage.node.localFile.childImageSharp.fixed} alt="" />
       <h1>{title}</h1>
       <p dangerouslySetInnerHTML={{ __html: content }} />
       <Link to="/">Go back to the homepage</Link>

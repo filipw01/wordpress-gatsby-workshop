@@ -38,7 +38,7 @@ Username: `wordpress` Password: `wordpress`
 
 `JAMstack Deployments` - add webhook deploy button
 
-`CMB2` - handle metaboxes (alternatively `ACF`)
+`ACF` - handle metaboxes (for now `CMB2` needs more workaround)
 
 `WP Gatsby` - connect wordpress to gatsby
 
@@ -194,6 +194,51 @@ Make sure `gatsby-image`, `Link`, `dangerouslySetInnerHTML`, `Layout` and `SEO` 
 
 Now create blog tiles on homepage with CSS modules
 
-## Pull data from Yoast SEO
+## Pull and handle data from Yoast SEO
+
+First let's make Gatsby aware of WordPress page templates
+
+Add this to your `functions.php`
+```php
+add_action('graphql_register_types', function () {
+    register_graphql_field('Page', 'pageTemplate', [
+        'type' => 'String',
+        'description' => 'WordPress Page Template',
+        'resolve' => function ($page) {
+            return get_page_template_slug($page->pageId);
+        },
+    ]);
+});
+```
+
+Now we can extend Homepage query 
+```gql
+wpPage(pageTemplate: {eq: "page-templates/homepage.php"}) {
+    seo {
+        metaDesc
+        opengraphDescription
+        opengraphTitle
+        opengraphType
+        title
+    }
+}
+```
+
+Handle received data in `SEO` component (perhaps `seo` and `path` props)
+
+Do the same for generated article pages
+
+## Pull and handle ACF data
+
+There is a [bug](https://github.com/wp-graphql/wp-graphql-acf/issues/76) with custom fields for only some pages/posts.
+So for now you have to add custom fields for whole post type.
+
+Using `ACF` create metaboxes and show in GraphQL
+
+## Setting up continuous deployment on CircleCI
 
 
+
+## My reflections
+
+The old vs the new gatsby-source-wordpress plugin 

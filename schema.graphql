@@ -632,23 +632,23 @@ type Query {
     imageSharp(children: NodeFilterListInput, fixed: ImageSharpFixedFilterInput, fluid: ImageSharpFluidFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, original: ImageSharpOriginalFilterInput, parent: NodeFilterInput, resize: ImageSharpResizeFilterInput, resolutions: ImageSharpResolutionsFilterInput, sizes: ImageSharpSizesFilterInput): ImageSharp
     site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: IntQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
     siteBuildMetadata(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput): SiteBuildMetadata
-    sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, matchPath: StringQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
+    sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, context: SitePageContextFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, matchPath: StringQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
     sitePlugin(browserAPIs: StringQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, nodeAPIs: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput, parent: NodeFilterInput, pluginFilepath: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, resolve: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, version: StringQueryOperatorInput): SitePlugin
-    wp(allSettings: WpSettingsFilterInput, children: NodeFilterListInput, discussionSettings: WpDiscussionSettingsFilterInput, generalSettings: WpGeneralSettingsFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, readingSettings: WpReadingSettingsFilterInput, writingSettings: WpWritingSettingsFilterInput): Wp
-    wpCategory(ancestors: WpCategoryToAncestorsCategoryConnectionFilterInput, children: NodeFilterListInput, count: IntQueryOperatorInput, databaseId: IntQueryOperatorInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, link: StringQueryOperatorInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput, posts: WpCategoryToPostConnectionFilterInput, slug: StringQueryOperatorInput, taxonomy: WpCategoryToTaxonomyConnectionEdgeFilterInput, termGroupId: IntQueryOperatorInput, termTaxonomyId: IntQueryOperatorInput, uri: StringQueryOperatorInput, wpChildren: WpCategoryToCategoryConnectionFilterInput, wpParent: WpCategoryToParentCategoryConnectionEdgeFilterInput): WpCategory
+    wp(allSettings: WpSettingsFilterInput, children: NodeFilterListInput, discussionSettings: WpDiscussionSettingsFilterInput, generalSettings: WpGeneralSettingsFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, readingSettings: WpReadingSettingsFilterInput, seo: WpSEOConfigFilterInput, writingSettings: WpWritingSettingsFilterInput): Wp
+    wpCategory(ancestors: WpCategoryToAncestorsCategoryConnectionFilterInput, children: NodeFilterListInput, count: IntQueryOperatorInput, databaseId: IntQueryOperatorInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, link: StringQueryOperatorInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput, posts: WpCategoryToPostConnectionFilterInput, seo: WpSEOFilterInput, slug: StringQueryOperatorInput, taxonomy: WpCategoryToTaxonomyConnectionEdgeFilterInput, termGroupId: IntQueryOperatorInput, termTaxonomyId: IntQueryOperatorInput, uri: StringQueryOperatorInput, wpChildren: WpCategoryToCategoryConnectionFilterInput, wpParent: WpCategoryToParentCategoryConnectionEdgeFilterInput): WpCategory
     wpComment(agent: StringQueryOperatorInput, approved: BooleanQueryOperatorInput, author: WpCommentToCommenterConnectionEdgeFilterInput, authorIp: StringQueryOperatorInput, children: NodeFilterListInput, commentedOn: WpCommentToContentNodeConnectionEdgeFilterInput, content: StringQueryOperatorInput, databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, karma: IntQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, replies: WpCommentToCommentConnectionFilterInput, type: StringQueryOperatorInput, wpParent: WpCommentToParentCommentConnectionEdgeFilterInput): WpComment
     wpContentNode(databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, desiredSlug: StringQueryOperatorInput, enclosure: StringQueryOperatorInput, guid: StringQueryOperatorInput, id: StringQueryOperatorInput, lastEditedBy: WpContentNodeToEditLastConnectionEdgeFilterInput, link: StringQueryOperatorInput, modified: DateQueryOperatorInput, modifiedGmt: DateQueryOperatorInput, nodeType: StringQueryOperatorInput, slug: StringQueryOperatorInput, status: StringQueryOperatorInput, terms: WpContentNodeToTermNodeConnectionFilterInput, uri: StringQueryOperatorInput): WpContentNode
     wpContentType(archivePath: StringQueryOperatorInput, canExport: BooleanQueryOperatorInput, children: NodeFilterListInput, connectedTaxonomies: WpContentTypeToTaxonomyConnectionFilterInput, contentNodes: WpContentTypeToContentNodeConnectionFilterInput, deleteWithUser: BooleanQueryOperatorInput, description: StringQueryOperatorInput, excludeFromSearch: BooleanQueryOperatorInput, graphqlPluralName: StringQueryOperatorInput, graphqlSingleName: StringQueryOperatorInput, hasArchive: BooleanQueryOperatorInput, hierarchical: BooleanQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isFrontPage: BooleanQueryOperatorInput, isPostsPage: BooleanQueryOperatorInput, label: StringQueryOperatorInput, labels: WpPostTypeLabelDetailsFilterInput, menuIcon: StringQueryOperatorInput, menuPosition: IntQueryOperatorInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, public: BooleanQueryOperatorInput, publiclyQueryable: BooleanQueryOperatorInput, restBase: StringQueryOperatorInput, restControllerClass: StringQueryOperatorInput, showInAdminBar: BooleanQueryOperatorInput, showInGraphql: BooleanQueryOperatorInput, showInMenu: BooleanQueryOperatorInput, showInNavMenus: BooleanQueryOperatorInput, showInRest: BooleanQueryOperatorInput, showUi: BooleanQueryOperatorInput, uri: StringQueryOperatorInput): WpContentType
-    wpMediaItem(altText: StringQueryOperatorInput, ancestors: WpHierarchicalContentNodeToContentNodeConnectionFilterInput, author: WpNodeWithAuthorToUserConnectionEdgeFilterInput, authorDatabaseId: IntQueryOperatorInput, authorId: IDQueryOperatorInput, caption: StringQueryOperatorInput, children: NodeFilterListInput, commentCount: IntQueryOperatorInput, commentStatus: StringQueryOperatorInput, comments: WpMediaItemToCommentConnectionFilterInput, contentType: WpMediaItemToContentTypeConnectionEdgeFilterInput, databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, description: StringQueryOperatorInput, desiredSlug: StringQueryOperatorInput, enclosure: StringQueryOperatorInput, fileSize: IntQueryOperatorInput, guid: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, lastEditedBy: WpContentNodeToEditLastConnectionEdgeFilterInput, link: StringQueryOperatorInput, localFile: FileFilterInput, mediaDetails: WpMediaDetailsFilterInput, mediaItemUrl: StringQueryOperatorInput, mediaType: StringQueryOperatorInput, mimeType: StringQueryOperatorInput, modified: DateQueryOperatorInput, modifiedGmt: DateQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput, remoteFile: FileFilterInput, sizes: StringQueryOperatorInput, slug: StringQueryOperatorInput, sourceUrl: StringQueryOperatorInput, srcSet: StringQueryOperatorInput, status: StringQueryOperatorInput, terms: WpContentNodeToTermNodeConnectionFilterInput, title: StringQueryOperatorInput, uri: StringQueryOperatorInput, wpChildren: WpHierarchicalContentNodeToContentNodeConnectionFilterInput, wpParent: WpHierarchicalContentNodeToContentNodeConnectionEdgeFilterInput): WpMediaItem
+    wpMediaItem(altText: StringQueryOperatorInput, ancestors: WpHierarchicalContentNodeToContentNodeConnectionFilterInput, author: WpNodeWithAuthorToUserConnectionEdgeFilterInput, authorDatabaseId: IntQueryOperatorInput, authorId: IDQueryOperatorInput, caption: StringQueryOperatorInput, children: NodeFilterListInput, commentCount: IntQueryOperatorInput, commentStatus: StringQueryOperatorInput, comments: WpMediaItemToCommentConnectionFilterInput, contentType: WpMediaItemToContentTypeConnectionEdgeFilterInput, databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, description: StringQueryOperatorInput, desiredSlug: StringQueryOperatorInput, enclosure: StringQueryOperatorInput, fileSize: IntQueryOperatorInput, guid: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, lastEditedBy: WpContentNodeToEditLastConnectionEdgeFilterInput, link: StringQueryOperatorInput, localFile: FileFilterInput, mediaDetails: WpMediaDetailsFilterInput, mediaItemUrl: StringQueryOperatorInput, mediaType: StringQueryOperatorInput, mimeType: StringQueryOperatorInput, modified: DateQueryOperatorInput, modifiedGmt: DateQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput, remoteFile: FileFilterInput, seo: WpSEOFilterInput, sizes: StringQueryOperatorInput, slug: StringQueryOperatorInput, sourceUrl: StringQueryOperatorInput, srcSet: StringQueryOperatorInput, status: StringQueryOperatorInput, terms: WpContentNodeToTermNodeConnectionFilterInput, title: StringQueryOperatorInput, uri: StringQueryOperatorInput, wpChildren: WpHierarchicalContentNodeToContentNodeConnectionFilterInput, wpParent: WpHierarchicalContentNodeToContentNodeConnectionEdgeFilterInput): WpMediaItem
     wpMenu(children: NodeFilterListInput, count: IntQueryOperatorInput, databaseId: IntQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, locations: WpMenuLocationEnumQueryOperatorInput, menuItems: WpMenuToMenuItemConnectionFilterInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, slug: StringQueryOperatorInput): WpMenu
     wpMenuItem(childItems: WpMenuItemToMenuItemConnectionFilterInput, children: NodeFilterListInput, connectedNode: WpMenuItemToMenuItemLinkableConnectionEdgeFilterInput, cssClasses: StringQueryOperatorInput, databaseId: IntQueryOperatorInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, label: StringQueryOperatorInput, linkRelationship: StringQueryOperatorInput, locations: WpMenuLocationEnumQueryOperatorInput, menu: WpMenuItemToMenuConnectionEdgeFilterInput, nodeType: StringQueryOperatorInput, order: IntQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput, path: StringQueryOperatorInput, target: StringQueryOperatorInput, title: StringQueryOperatorInput, url: StringQueryOperatorInput): WpMenuItem
-    wpPage(ancestors: WpHierarchicalContentNodeToContentNodeConnectionFilterInput, author: WpNodeWithAuthorToUserConnectionEdgeFilterInput, authorDatabaseId: IntQueryOperatorInput, authorId: IDQueryOperatorInput, children: NodeFilterListInput, commentCount: IntQueryOperatorInput, commentStatus: StringQueryOperatorInput, comments: WpPageToCommentConnectionFilterInput, content: StringQueryOperatorInput, contentType: WpPageToContentTypeConnectionEdgeFilterInput, databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, desiredSlug: StringQueryOperatorInput, enclosure: StringQueryOperatorInput, featuredImage: WpNodeWithFeaturedImageToMediaItemConnectionEdgeFilterInput, featuredImageDatabaseId: IntQueryOperatorInput, featuredImageId: IDQueryOperatorInput, guid: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isFrontPage: BooleanQueryOperatorInput, isPostsPage: BooleanQueryOperatorInput, isRevision: BooleanQueryOperatorInput, lastEditedBy: WpContentNodeToEditLastConnectionEdgeFilterInput, link: StringQueryOperatorInput, menuOrder: IntQueryOperatorInput, modified: DateQueryOperatorInput, modifiedGmt: DateQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput, slug: StringQueryOperatorInput, status: StringQueryOperatorInput, terms: WpContentNodeToTermNodeConnectionFilterInput, title: StringQueryOperatorInput, uri: StringQueryOperatorInput, wpChildren: WpHierarchicalContentNodeToContentNodeConnectionFilterInput, wpParent: WpHierarchicalContentNodeToContentNodeConnectionEdgeFilterInput): WpPage
-    wpPost(author: WpNodeWithAuthorToUserConnectionEdgeFilterInput, authorDatabaseId: IntQueryOperatorInput, authorId: IDQueryOperatorInput, categories: WpPostToCategoryConnectionFilterInput, children: NodeFilterListInput, commentCount: IntQueryOperatorInput, commentStatus: StringQueryOperatorInput, comments: WpPostToCommentConnectionFilterInput, content: StringQueryOperatorInput, contentType: WpPostToContentTypeConnectionEdgeFilterInput, databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, desiredSlug: StringQueryOperatorInput, enclosure: StringQueryOperatorInput, excerpt: StringQueryOperatorInput, featuredImage: WpNodeWithFeaturedImageToMediaItemConnectionEdgeFilterInput, featuredImageDatabaseId: IntQueryOperatorInput, featuredImageId: IDQueryOperatorInput, guid: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isRevision: BooleanQueryOperatorInput, lastEditedBy: WpContentNodeToEditLastConnectionEdgeFilterInput, link: StringQueryOperatorInput, modified: DateQueryOperatorInput, modifiedGmt: DateQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, pingStatus: StringQueryOperatorInput, pinged: StringQueryOperatorInput, postFormats: WpPostToPostFormatConnectionFilterInput, slug: StringQueryOperatorInput, status: StringQueryOperatorInput, tags: WpPostToTagConnectionFilterInput, terms: WpContentNodeToTermNodeConnectionFilterInput, title: StringQueryOperatorInput, toPing: StringQueryOperatorInput, uri: StringQueryOperatorInput): WpPost
-    wpPostFormat(children: NodeFilterListInput, count: IntQueryOperatorInput, databaseId: IntQueryOperatorInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, link: StringQueryOperatorInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, posts: WpPostFormatToPostConnectionFilterInput, slug: StringQueryOperatorInput, taxonomy: WpPostFormatToTaxonomyConnectionEdgeFilterInput, termGroupId: IntQueryOperatorInput, termTaxonomyId: IntQueryOperatorInput, uri: StringQueryOperatorInput): WpPostFormat
-    wpTag(children: NodeFilterListInput, count: IntQueryOperatorInput, databaseId: IntQueryOperatorInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, link: StringQueryOperatorInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, posts: WpTagToPostConnectionFilterInput, slug: StringQueryOperatorInput, taxonomy: WpTagToTaxonomyConnectionEdgeFilterInput, termGroupId: IntQueryOperatorInput, termTaxonomyId: IntQueryOperatorInput, uri: StringQueryOperatorInput): WpTag
+    wpPage(ancestors: WpHierarchicalContentNodeToContentNodeConnectionFilterInput, author: WpNodeWithAuthorToUserConnectionEdgeFilterInput, authorDatabaseId: IntQueryOperatorInput, authorId: IDQueryOperatorInput, children: NodeFilterListInput, commentCount: IntQueryOperatorInput, commentStatus: StringQueryOperatorInput, comments: WpPageToCommentConnectionFilterInput, content: StringQueryOperatorInput, contentType: WpPageToContentTypeConnectionEdgeFilterInput, databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, desiredSlug: StringQueryOperatorInput, enclosure: StringQueryOperatorInput, featuredImage: WpNodeWithFeaturedImageToMediaItemConnectionEdgeFilterInput, featuredImageDatabaseId: IntQueryOperatorInput, featuredImageId: IDQueryOperatorInput, guid: StringQueryOperatorInput, homepageMetaboxes: WpPage_HomepagemetaboxesFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isFrontPage: BooleanQueryOperatorInput, isPostsPage: BooleanQueryOperatorInput, isRevision: BooleanQueryOperatorInput, lastEditedBy: WpContentNodeToEditLastConnectionEdgeFilterInput, link: StringQueryOperatorInput, menuOrder: IntQueryOperatorInput, modified: DateQueryOperatorInput, modifiedGmt: DateQueryOperatorInput, nodeType: StringQueryOperatorInput, pageTemplate: StringQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput, seo: WpSEOFilterInput, slug: StringQueryOperatorInput, status: StringQueryOperatorInput, terms: WpContentNodeToTermNodeConnectionFilterInput, title: StringQueryOperatorInput, uri: StringQueryOperatorInput, wpChildren: WpHierarchicalContentNodeToContentNodeConnectionFilterInput, wpParent: WpHierarchicalContentNodeToContentNodeConnectionEdgeFilterInput): WpPage
+    wpPost(author: WpNodeWithAuthorToUserConnectionEdgeFilterInput, authorDatabaseId: IntQueryOperatorInput, authorId: IDQueryOperatorInput, categories: WpPostToCategoryConnectionFilterInput, children: NodeFilterListInput, commentCount: IntQueryOperatorInput, commentStatus: StringQueryOperatorInput, comments: WpPostToCommentConnectionFilterInput, content: StringQueryOperatorInput, contentType: WpPostToContentTypeConnectionEdgeFilterInput, databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, desiredSlug: StringQueryOperatorInput, enclosure: StringQueryOperatorInput, excerpt: StringQueryOperatorInput, featuredImage: WpNodeWithFeaturedImageToMediaItemConnectionEdgeFilterInput, featuredImageDatabaseId: IntQueryOperatorInput, featuredImageId: IDQueryOperatorInput, guid: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isRevision: BooleanQueryOperatorInput, lastEditedBy: WpContentNodeToEditLastConnectionEdgeFilterInput, link: StringQueryOperatorInput, modified: DateQueryOperatorInput, modifiedGmt: DateQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, pingStatus: StringQueryOperatorInput, pinged: StringQueryOperatorInput, postFormats: WpPostToPostFormatConnectionFilterInput, seo: WpSEOFilterInput, slug: StringQueryOperatorInput, status: StringQueryOperatorInput, tags: WpPostToTagConnectionFilterInput, terms: WpContentNodeToTermNodeConnectionFilterInput, title: StringQueryOperatorInput, toPing: StringQueryOperatorInput, uri: StringQueryOperatorInput): WpPost
+    wpPostFormat(children: NodeFilterListInput, count: IntQueryOperatorInput, databaseId: IntQueryOperatorInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, link: StringQueryOperatorInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, posts: WpPostFormatToPostConnectionFilterInput, seo: WpSEOFilterInput, slug: StringQueryOperatorInput, taxonomy: WpPostFormatToTaxonomyConnectionEdgeFilterInput, termGroupId: IntQueryOperatorInput, termTaxonomyId: IntQueryOperatorInput, uri: StringQueryOperatorInput): WpPostFormat
+    wpTag(children: NodeFilterListInput, count: IntQueryOperatorInput, databaseId: IntQueryOperatorInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, link: StringQueryOperatorInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, posts: WpTagToPostConnectionFilterInput, seo: WpSEOFilterInput, slug: StringQueryOperatorInput, taxonomy: WpTagToTaxonomyConnectionEdgeFilterInput, termGroupId: IntQueryOperatorInput, termTaxonomyId: IntQueryOperatorInput, uri: StringQueryOperatorInput): WpTag
     wpTaxonomy(archivePath: StringQueryOperatorInput, children: NodeFilterListInput, connectedContentTypes: WpTaxonomyToContentTypeConnectionFilterInput, description: StringQueryOperatorInput, graphqlPluralName: StringQueryOperatorInput, graphqlSingleName: StringQueryOperatorInput, hierarchical: BooleanQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, label: StringQueryOperatorInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, public: BooleanQueryOperatorInput, restBase: StringQueryOperatorInput, restControllerClass: StringQueryOperatorInput, showCloud: BooleanQueryOperatorInput, showInAdminColumn: BooleanQueryOperatorInput, showInGraphql: BooleanQueryOperatorInput, showInMenu: BooleanQueryOperatorInput, showInNavMenus: BooleanQueryOperatorInput, showInQuickEdit: BooleanQueryOperatorInput, showInRest: BooleanQueryOperatorInput, showUi: BooleanQueryOperatorInput): WpTaxonomy
     wpTermNode(count: IntQueryOperatorInput, databaseId: IntQueryOperatorInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, link: StringQueryOperatorInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, slug: StringQueryOperatorInput, termGroupId: IntQueryOperatorInput, termTaxonomyId: IntQueryOperatorInput, uri: StringQueryOperatorInput): WpTermNode
-    wpUser(avatar: WpAvatarFilterInput, capKey: StringQueryOperatorInput, capabilities: StringQueryOperatorInput, children: NodeFilterListInput, comments: WpUserToCommentConnectionFilterInput, databaseId: IntQueryOperatorInput, description: StringQueryOperatorInput, email: StringQueryOperatorInput, extraCapabilities: StringQueryOperatorInput, firstName: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, lastName: StringQueryOperatorInput, locale: StringQueryOperatorInput, name: StringQueryOperatorInput, nicename: StringQueryOperatorInput, nickname: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, pages: WpUserToPageConnectionFilterInput, parent: NodeFilterInput, posts: WpUserToPostConnectionFilterInput, registeredDate: StringQueryOperatorInput, roles: WpUserToUserRoleConnectionFilterInput, slug: StringQueryOperatorInput, uri: StringQueryOperatorInput, url: StringQueryOperatorInput, username: StringQueryOperatorInput): WpUser
+    wpUser(avatar: WpAvatarFilterInput, capKey: StringQueryOperatorInput, capabilities: StringQueryOperatorInput, children: NodeFilterListInput, comments: WpUserToCommentConnectionFilterInput, databaseId: IntQueryOperatorInput, description: StringQueryOperatorInput, email: StringQueryOperatorInput, extraCapabilities: StringQueryOperatorInput, firstName: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, lastName: StringQueryOperatorInput, locale: StringQueryOperatorInput, name: StringQueryOperatorInput, nicename: StringQueryOperatorInput, nickname: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, pages: WpUserToPageConnectionFilterInput, parent: NodeFilterInput, posts: WpUserToPostConnectionFilterInput, registeredDate: StringQueryOperatorInput, roles: WpUserToUserRoleConnectionFilterInput, seo: WpSEOUserFilterInput, slug: StringQueryOperatorInput, uri: StringQueryOperatorInput, url: StringQueryOperatorInput, username: StringQueryOperatorInput): WpUser
     wpUserRole(capabilities: StringQueryOperatorInput, children: NodeFilterListInput, displayName: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput): WpUserRole
 }
 
@@ -744,6 +744,7 @@ type SitePage implements Node {
     component: String!
     componentChunkName: String!
     componentPath: String
+    context: SitePageContext
     id: ID!
     internal: Internal!
     internalComponentName: String!
@@ -762,6 +763,61 @@ type SitePageConnection {
     nodes: [SitePage!]!
     pageInfo: PageInfo!
     totalCount: Int!
+}
+
+type SitePageContext {
+    data: SitePageContextData
+}
+
+type SitePageContextData {
+    author: SitePageContextDataAuthor
+    content: String
+    date: String
+    featuredImage: SitePageContextDataFeaturedImage
+    seo: SitePageContextDataSeo
+    status: String
+    title: String
+    uri: String
+}
+
+type SitePageContextDataAuthor {
+    node: SitePageContextDataAuthorNode
+}
+
+type SitePageContextDataAuthorNode {
+    name: String
+}
+
+type SitePageContextDataFeaturedImage {
+    node: SitePageContextDataFeaturedImageNode
+}
+
+type SitePageContextDataFeaturedImageNode {
+    localFile: SitePageContextDataFeaturedImageNodeLocalFile
+}
+
+type SitePageContextDataFeaturedImageNodeLocalFile {
+    childImageSharp: SitePageContextDataFeaturedImageNodeLocalFileChildImageSharp
+}
+
+type SitePageContextDataFeaturedImageNodeLocalFileChildImageSharp {
+    fixed: SitePageContextDataFeaturedImageNodeLocalFileChildImageSharpFixed
+}
+
+type SitePageContextDataFeaturedImageNodeLocalFileChildImageSharpFixed {
+    base64: String
+    height: Int
+    src: String
+    srcSet: String
+    width: Int
+}
+
+type SitePageContextDataSeo {
+    metaDesc: String
+    opengraphDescription: String
+    opengraphTitle: String
+    opengraphType: String
+    title: String
 }
 
 type SitePageEdge {
@@ -867,7 +923,9 @@ type SitePluginPluginOptions {
 type SiteSiteMetadata {
     author: String
     description: String
+    lang: String
     title: String
+    url: String
 }
 
 type Wp implements Node {
@@ -880,6 +938,7 @@ type Wp implements Node {
     nodeType: String
     parent: Node
     readingSettings: WpReadingSettings
+    seo: WpSEOConfig
     writingSettings: WpWritingSettings
 }
 
@@ -911,6 +970,7 @@ type WpCategory implements Node & WpDatabaseIdentifier & WpHierarchicalTermNode 
     parentDatabaseId: Int
     parentId: ID
     posts: WpCategoryToPostConnection
+    seo: WpSEO
     slug: String
     taxonomy: WpCategoryToTaxonomyConnectionEdge
     termGroupId: Int
@@ -1286,6 +1346,7 @@ type WpMediaItem implements Node & WpContentNode & WpDatabaseIdentifier & WpHier
     parentDatabaseId: Int
     parentId: ID
     remoteFile: File @deprecated(reason : "MediaItem.remoteFile was renamed to localFile")
+    seo: WpSEO
     sizes: String
     slug: String
     sourceUrl: String
@@ -1508,6 +1569,7 @@ type WpPage implements Node & WpContentNode & WpDatabaseIdentifier & WpHierarchi
     featuredImageDatabaseId: Int
     featuredImageId: ID
     guid: String
+    homepageMetaboxes: WpPage_Homepagemetaboxes
     id: ID!
     internal: Internal!
     isFrontPage: Boolean!
@@ -1537,9 +1599,11 @@ type WpPage implements Node & WpContentNode & WpDatabaseIdentifier & WpHierarchi
         locale: String
     ): Date
     nodeType: String
+    pageTemplate: String
     parent: Node
     parentDatabaseId: Int
     parentId: ID
+    seo: WpSEO
     slug: String
     status: String
     template: WpContentTemplateUnion
@@ -1580,6 +1644,12 @@ type WpPageToCommentConnection {
 
 type WpPageToContentTypeConnectionEdge {
     node: WpContentType
+}
+
+type WpPage_Homepagemetaboxes {
+    fieldGroupName: String
+    heroImage: WpMediaItem
+    heroText: String
 }
 
 type WpPost implements Node & WpContentNode & WpDatabaseIdentifier & WpMenuItemLinkable & WpNode & WpNodeWithAuthor & WpNodeWithComments & WpNodeWithContentEditor & WpNodeWithExcerpt & WpNodeWithFeaturedImage & WpNodeWithRevisions & WpNodeWithTitle & WpNodeWithTrackbacks & WpUniformResourceIdentifiable {
@@ -1651,6 +1721,7 @@ type WpPost implements Node & WpContentNode & WpDatabaseIdentifier & WpMenuItemL
     pingStatus: String
     pinged: [String]
     postFormats: WpPostToPostFormatConnection
+    seo: WpSEO
     slug: String
     status: String
     tags: WpPostToTagConnection
@@ -1688,6 +1759,7 @@ type WpPostFormat implements Node & WpDatabaseIdentifier & WpNode & WpTermNode &
     nodeType: String
     parent: Node
     posts: WpPostFormatToPostConnection
+    seo: WpSEO
     slug: String
     taxonomy: WpPostFormatToTaxonomyConnectionEdge
     termGroupId: Int
@@ -1788,6 +1860,158 @@ type WpReadingSettings {
     postsPerPage: Int
 }
 
+type WpSEO {
+    breadcrumbs: [WpSEOPostTypeBreadcrumbs]
+    canonical: String
+    focuskw: String
+    metaDesc: String
+    metaKeywords: String
+    metaRobotsNofollow: String
+    metaRobotsNoindex: String
+    opengraphAuthor: String
+    opengraphDescription: String
+    opengraphImage: WpMediaItem
+    opengraphModifiedTime: String
+    opengraphPublishedTime: String
+    opengraphPublisher: String
+    opengraphSiteName: String
+    opengraphTitle: String
+    opengraphType: String
+    opengraphUrl: String
+    title: String
+    twitterDescription: String
+    twitterImage: WpMediaItem
+    twitterTitle: String
+}
+
+type WpSEOBreadcrumbs {
+    archivePrefix: String
+    boldLast: Boolean
+    enabled: Boolean
+    homeText: String
+    notFoundText: String
+    prefix: String
+    searchPrefix: String
+    separator: String
+    showBlogPage: Boolean
+}
+
+type WpSEOConfig {
+    breadcrumbs: WpSEOBreadcrumbs
+    openGraph: WpSEOOpenGraph
+    redirects: [WpSEORedirect]
+    schema: WpSEOSchema
+    social: WpSEOSocial
+    webmaster: WpSEOWebmaster
+}
+
+type WpSEOOpenGraph {
+    defaultImage: WpMediaItem
+    frontPage: WpSEOOpenGraphFrontPage
+}
+
+type WpSEOOpenGraphFrontPage {
+    description: String
+    image: WpMediaItem
+    title: String
+}
+
+type WpSEOPostTypeBreadcrumbs {
+    text: String
+    url: String
+}
+
+type WpSEORedirect {
+    format: String
+    origin: String
+    target: String
+    type: Int
+}
+
+type WpSEOSchema {
+    companyLogo: WpMediaItem
+    companyName: String
+    companyOrPerson: String
+    inLanguage: String
+    logo: WpMediaItem
+    personLogo: WpMediaItem
+    siteName: String
+    siteUrl: String
+    wordpressSiteName: String
+}
+
+type WpSEOSocial {
+    facebook: WpSEOSocialFacebook
+    instagram: WpSEOSocialInstagram
+    linkedIn: WpSEOSocialLinkedIn
+    mySpace: WpSEOSocialMySpace
+    pinterest: WpSEOSocialPinterest
+    twitter: WpSEOSocialTwitter
+    wikipedia: WpSEOSocialWikipedia
+    youTube: WpSEOSocialYoutube
+}
+
+type WpSEOSocialFacebook {
+    defaultImage: WpMediaItem
+    url: String
+}
+
+type WpSEOSocialInstagram {
+    url: String
+}
+
+type WpSEOSocialLinkedIn {
+    url: String
+}
+
+type WpSEOSocialMySpace {
+    url: String
+}
+
+type WpSEOSocialPinterest {
+    metaTag: String
+    url: String
+}
+
+type WpSEOSocialTwitter {
+    username: String
+}
+
+type WpSEOSocialWikipedia {
+    url: String
+}
+
+type WpSEOSocialYoutube {
+    url: String
+}
+
+type WpSEOUser {
+    metaDesc: String
+    metaRobotsNofollow: String
+    metaRobotsNoindex: String
+    social: WpSEOUserSocial
+    title: String
+}
+
+type WpSEOUserSocial {
+    facebook: String
+    instagram: String
+    linkedIn: String
+    mySpace: String
+    pinterest: String
+    soundCloud: String
+    twitter: String
+    wikipedia: String
+    youTube: String
+}
+
+type WpSEOWebmaster {
+    baiduVerify: String
+    googleVerify: String
+    msVerify: String
+    yandexVerify: String
+}
+
 type WpSettings {
     discussionSettingsDefaultCommentStatus: String
     discussionSettingsDefaultPingStatus: String
@@ -1818,6 +2042,7 @@ type WpTag implements Node & WpDatabaseIdentifier & WpMenuItemLinkable & WpNode 
     nodeType: String
     parent: Node
     posts: WpTagToPostConnection
+    seo: WpSEO
     slug: String
     taxonomy: WpTagToTaxonomyConnectionEdge
     termGroupId: Int
@@ -1960,6 +2185,7 @@ type WpUser implements Node & WpCommenter & WpDatabaseIdentifier & WpNode & WpUn
     posts: WpUserToPostConnection
     registeredDate: String
     roles: WpUserToUserRoleConnection
+    seo: WpSEOUser
     slug: String
     uri: String
     url: String
@@ -2748,7 +2974,9 @@ enum SiteFieldsEnum {
     port
     siteMetadata___author
     siteMetadata___description
+    siteMetadata___lang
     siteMetadata___title
+    siteMetadata___url
 }
 
 enum SitePageFieldsEnum {
@@ -2794,6 +3022,16 @@ enum SitePageFieldsEnum {
     component
     componentChunkName
     componentPath
+    context___data___content
+    context___data___date
+    context___data___seo___metaDesc
+    context___data___seo___opengraphDescription
+    context___data___seo___opengraphTitle
+    context___data___seo___opengraphType
+    context___data___seo___title
+    context___data___status
+    context___data___title
+    context___data___uri
     id
     internalComponentName
     internal___content
@@ -3080,6 +3318,25 @@ enum WpCategoryFieldsEnum {
     ancestors___nodes___parent___children
     ancestors___nodes___parent___id
     ancestors___nodes___posts___nodes
+    ancestors___nodes___seo___breadcrumbs
+    ancestors___nodes___seo___canonical
+    ancestors___nodes___seo___focuskw
+    ancestors___nodes___seo___metaDesc
+    ancestors___nodes___seo___metaKeywords
+    ancestors___nodes___seo___metaRobotsNofollow
+    ancestors___nodes___seo___metaRobotsNoindex
+    ancestors___nodes___seo___opengraphAuthor
+    ancestors___nodes___seo___opengraphDescription
+    ancestors___nodes___seo___opengraphModifiedTime
+    ancestors___nodes___seo___opengraphPublishedTime
+    ancestors___nodes___seo___opengraphPublisher
+    ancestors___nodes___seo___opengraphSiteName
+    ancestors___nodes___seo___opengraphTitle
+    ancestors___nodes___seo___opengraphType
+    ancestors___nodes___seo___opengraphUrl
+    ancestors___nodes___seo___title
+    ancestors___nodes___seo___twitterDescription
+    ancestors___nodes___seo___twitterTitle
     ancestors___nodes___slug
     ancestors___nodes___termGroupId
     ancestors___nodes___termTaxonomyId
@@ -3218,6 +3475,25 @@ enum WpCategoryFieldsEnum {
     posts___nodes___pingStatus
     posts___nodes___pinged
     posts___nodes___postFormats___nodes
+    posts___nodes___seo___breadcrumbs
+    posts___nodes___seo___canonical
+    posts___nodes___seo___focuskw
+    posts___nodes___seo___metaDesc
+    posts___nodes___seo___metaKeywords
+    posts___nodes___seo___metaRobotsNofollow
+    posts___nodes___seo___metaRobotsNoindex
+    posts___nodes___seo___opengraphAuthor
+    posts___nodes___seo___opengraphDescription
+    posts___nodes___seo___opengraphModifiedTime
+    posts___nodes___seo___opengraphPublishedTime
+    posts___nodes___seo___opengraphPublisher
+    posts___nodes___seo___opengraphSiteName
+    posts___nodes___seo___opengraphTitle
+    posts___nodes___seo___opengraphType
+    posts___nodes___seo___opengraphUrl
+    posts___nodes___seo___title
+    posts___nodes___seo___twitterDescription
+    posts___nodes___seo___twitterTitle
     posts___nodes___slug
     posts___nodes___status
     posts___nodes___tags___nodes
@@ -3225,6 +3501,317 @@ enum WpCategoryFieldsEnum {
     posts___nodes___title
     posts___nodes___toPing
     posts___nodes___uri
+    seo___breadcrumbs
+    seo___breadcrumbs___text
+    seo___breadcrumbs___url
+    seo___canonical
+    seo___focuskw
+    seo___metaDesc
+    seo___metaKeywords
+    seo___metaRobotsNofollow
+    seo___metaRobotsNoindex
+    seo___opengraphAuthor
+    seo___opengraphDescription
+    seo___opengraphImage___altText
+    seo___opengraphImage___ancestors___nodes
+    seo___opengraphImage___authorDatabaseId
+    seo___opengraphImage___authorId
+    seo___opengraphImage___caption
+    seo___opengraphImage___children
+    seo___opengraphImage___children___children
+    seo___opengraphImage___children___id
+    seo___opengraphImage___commentCount
+    seo___opengraphImage___commentStatus
+    seo___opengraphImage___comments___nodes
+    seo___opengraphImage___databaseId
+    seo___opengraphImage___date
+    seo___opengraphImage___dateGmt
+    seo___opengraphImage___description
+    seo___opengraphImage___desiredSlug
+    seo___opengraphImage___enclosure
+    seo___opengraphImage___fileSize
+    seo___opengraphImage___guid
+    seo___opengraphImage___id
+    seo___opengraphImage___internal___content
+    seo___opengraphImage___internal___contentDigest
+    seo___opengraphImage___internal___description
+    seo___opengraphImage___internal___fieldOwners
+    seo___opengraphImage___internal___ignoreType
+    seo___opengraphImage___internal___mediaType
+    seo___opengraphImage___internal___owner
+    seo___opengraphImage___internal___type
+    seo___opengraphImage___link
+    seo___opengraphImage___localFile___absolutePath
+    seo___opengraphImage___localFile___accessTime
+    seo___opengraphImage___localFile___atime
+    seo___opengraphImage___localFile___atimeMs
+    seo___opengraphImage___localFile___base
+    seo___opengraphImage___localFile___birthTime
+    seo___opengraphImage___localFile___birthtime
+    seo___opengraphImage___localFile___birthtimeMs
+    seo___opengraphImage___localFile___blksize
+    seo___opengraphImage___localFile___blocks
+    seo___opengraphImage___localFile___changeTime
+    seo___opengraphImage___localFile___children
+    seo___opengraphImage___localFile___ctime
+    seo___opengraphImage___localFile___ctimeMs
+    seo___opengraphImage___localFile___dev
+    seo___opengraphImage___localFile___dir
+    seo___opengraphImage___localFile___ext
+    seo___opengraphImage___localFile___extension
+    seo___opengraphImage___localFile___gid
+    seo___opengraphImage___localFile___id
+    seo___opengraphImage___localFile___ino
+    seo___opengraphImage___localFile___mode
+    seo___opengraphImage___localFile___modifiedTime
+    seo___opengraphImage___localFile___mtime
+    seo___opengraphImage___localFile___mtimeMs
+    seo___opengraphImage___localFile___name
+    seo___opengraphImage___localFile___nlink
+    seo___opengraphImage___localFile___prettySize
+    seo___opengraphImage___localFile___publicURL
+    seo___opengraphImage___localFile___rdev
+    seo___opengraphImage___localFile___relativeDirectory
+    seo___opengraphImage___localFile___relativePath
+    seo___opengraphImage___localFile___root
+    seo___opengraphImage___localFile___size
+    seo___opengraphImage___localFile___sourceInstanceName
+    seo___opengraphImage___localFile___uid
+    seo___opengraphImage___localFile___url
+    seo___opengraphImage___mediaDetails___file
+    seo___opengraphImage___mediaDetails___height
+    seo___opengraphImage___mediaDetails___sizes
+    seo___opengraphImage___mediaDetails___width
+    seo___opengraphImage___mediaItemUrl
+    seo___opengraphImage___mediaType
+    seo___opengraphImage___mimeType
+    seo___opengraphImage___modified
+    seo___opengraphImage___modifiedGmt
+    seo___opengraphImage___nodeType
+    seo___opengraphImage___parentDatabaseId
+    seo___opengraphImage___parentId
+    seo___opengraphImage___parent___children
+    seo___opengraphImage___parent___id
+    seo___opengraphImage___remoteFile___absolutePath
+    seo___opengraphImage___remoteFile___accessTime
+    seo___opengraphImage___remoteFile___atime
+    seo___opengraphImage___remoteFile___atimeMs
+    seo___opengraphImage___remoteFile___base
+    seo___opengraphImage___remoteFile___birthTime
+    seo___opengraphImage___remoteFile___birthtime
+    seo___opengraphImage___remoteFile___birthtimeMs
+    seo___opengraphImage___remoteFile___blksize
+    seo___opengraphImage___remoteFile___blocks
+    seo___opengraphImage___remoteFile___changeTime
+    seo___opengraphImage___remoteFile___children
+    seo___opengraphImage___remoteFile___ctime
+    seo___opengraphImage___remoteFile___ctimeMs
+    seo___opengraphImage___remoteFile___dev
+    seo___opengraphImage___remoteFile___dir
+    seo___opengraphImage___remoteFile___ext
+    seo___opengraphImage___remoteFile___extension
+    seo___opengraphImage___remoteFile___gid
+    seo___opengraphImage___remoteFile___id
+    seo___opengraphImage___remoteFile___ino
+    seo___opengraphImage___remoteFile___mode
+    seo___opengraphImage___remoteFile___modifiedTime
+    seo___opengraphImage___remoteFile___mtime
+    seo___opengraphImage___remoteFile___mtimeMs
+    seo___opengraphImage___remoteFile___name
+    seo___opengraphImage___remoteFile___nlink
+    seo___opengraphImage___remoteFile___prettySize
+    seo___opengraphImage___remoteFile___publicURL
+    seo___opengraphImage___remoteFile___rdev
+    seo___opengraphImage___remoteFile___relativeDirectory
+    seo___opengraphImage___remoteFile___relativePath
+    seo___opengraphImage___remoteFile___root
+    seo___opengraphImage___remoteFile___size
+    seo___opengraphImage___remoteFile___sourceInstanceName
+    seo___opengraphImage___remoteFile___uid
+    seo___opengraphImage___remoteFile___url
+    seo___opengraphImage___seo___breadcrumbs
+    seo___opengraphImage___seo___canonical
+    seo___opengraphImage___seo___focuskw
+    seo___opengraphImage___seo___metaDesc
+    seo___opengraphImage___seo___metaKeywords
+    seo___opengraphImage___seo___metaRobotsNofollow
+    seo___opengraphImage___seo___metaRobotsNoindex
+    seo___opengraphImage___seo___opengraphAuthor
+    seo___opengraphImage___seo___opengraphDescription
+    seo___opengraphImage___seo___opengraphModifiedTime
+    seo___opengraphImage___seo___opengraphPublishedTime
+    seo___opengraphImage___seo___opengraphPublisher
+    seo___opengraphImage___seo___opengraphSiteName
+    seo___opengraphImage___seo___opengraphTitle
+    seo___opengraphImage___seo___opengraphType
+    seo___opengraphImage___seo___opengraphUrl
+    seo___opengraphImage___seo___title
+    seo___opengraphImage___seo___twitterDescription
+    seo___opengraphImage___seo___twitterTitle
+    seo___opengraphImage___sizes
+    seo___opengraphImage___slug
+    seo___opengraphImage___sourceUrl
+    seo___opengraphImage___srcSet
+    seo___opengraphImage___status
+    seo___opengraphImage___terms___nodes
+    seo___opengraphImage___title
+    seo___opengraphImage___uri
+    seo___opengraphImage___wpChildren___nodes
+    seo___opengraphModifiedTime
+    seo___opengraphPublishedTime
+    seo___opengraphPublisher
+    seo___opengraphSiteName
+    seo___opengraphTitle
+    seo___opengraphType
+    seo___opengraphUrl
+    seo___title
+    seo___twitterDescription
+    seo___twitterImage___altText
+    seo___twitterImage___ancestors___nodes
+    seo___twitterImage___authorDatabaseId
+    seo___twitterImage___authorId
+    seo___twitterImage___caption
+    seo___twitterImage___children
+    seo___twitterImage___children___children
+    seo___twitterImage___children___id
+    seo___twitterImage___commentCount
+    seo___twitterImage___commentStatus
+    seo___twitterImage___comments___nodes
+    seo___twitterImage___databaseId
+    seo___twitterImage___date
+    seo___twitterImage___dateGmt
+    seo___twitterImage___description
+    seo___twitterImage___desiredSlug
+    seo___twitterImage___enclosure
+    seo___twitterImage___fileSize
+    seo___twitterImage___guid
+    seo___twitterImage___id
+    seo___twitterImage___internal___content
+    seo___twitterImage___internal___contentDigest
+    seo___twitterImage___internal___description
+    seo___twitterImage___internal___fieldOwners
+    seo___twitterImage___internal___ignoreType
+    seo___twitterImage___internal___mediaType
+    seo___twitterImage___internal___owner
+    seo___twitterImage___internal___type
+    seo___twitterImage___link
+    seo___twitterImage___localFile___absolutePath
+    seo___twitterImage___localFile___accessTime
+    seo___twitterImage___localFile___atime
+    seo___twitterImage___localFile___atimeMs
+    seo___twitterImage___localFile___base
+    seo___twitterImage___localFile___birthTime
+    seo___twitterImage___localFile___birthtime
+    seo___twitterImage___localFile___birthtimeMs
+    seo___twitterImage___localFile___blksize
+    seo___twitterImage___localFile___blocks
+    seo___twitterImage___localFile___changeTime
+    seo___twitterImage___localFile___children
+    seo___twitterImage___localFile___ctime
+    seo___twitterImage___localFile___ctimeMs
+    seo___twitterImage___localFile___dev
+    seo___twitterImage___localFile___dir
+    seo___twitterImage___localFile___ext
+    seo___twitterImage___localFile___extension
+    seo___twitterImage___localFile___gid
+    seo___twitterImage___localFile___id
+    seo___twitterImage___localFile___ino
+    seo___twitterImage___localFile___mode
+    seo___twitterImage___localFile___modifiedTime
+    seo___twitterImage___localFile___mtime
+    seo___twitterImage___localFile___mtimeMs
+    seo___twitterImage___localFile___name
+    seo___twitterImage___localFile___nlink
+    seo___twitterImage___localFile___prettySize
+    seo___twitterImage___localFile___publicURL
+    seo___twitterImage___localFile___rdev
+    seo___twitterImage___localFile___relativeDirectory
+    seo___twitterImage___localFile___relativePath
+    seo___twitterImage___localFile___root
+    seo___twitterImage___localFile___size
+    seo___twitterImage___localFile___sourceInstanceName
+    seo___twitterImage___localFile___uid
+    seo___twitterImage___localFile___url
+    seo___twitterImage___mediaDetails___file
+    seo___twitterImage___mediaDetails___height
+    seo___twitterImage___mediaDetails___sizes
+    seo___twitterImage___mediaDetails___width
+    seo___twitterImage___mediaItemUrl
+    seo___twitterImage___mediaType
+    seo___twitterImage___mimeType
+    seo___twitterImage___modified
+    seo___twitterImage___modifiedGmt
+    seo___twitterImage___nodeType
+    seo___twitterImage___parentDatabaseId
+    seo___twitterImage___parentId
+    seo___twitterImage___parent___children
+    seo___twitterImage___parent___id
+    seo___twitterImage___remoteFile___absolutePath
+    seo___twitterImage___remoteFile___accessTime
+    seo___twitterImage___remoteFile___atime
+    seo___twitterImage___remoteFile___atimeMs
+    seo___twitterImage___remoteFile___base
+    seo___twitterImage___remoteFile___birthTime
+    seo___twitterImage___remoteFile___birthtime
+    seo___twitterImage___remoteFile___birthtimeMs
+    seo___twitterImage___remoteFile___blksize
+    seo___twitterImage___remoteFile___blocks
+    seo___twitterImage___remoteFile___changeTime
+    seo___twitterImage___remoteFile___children
+    seo___twitterImage___remoteFile___ctime
+    seo___twitterImage___remoteFile___ctimeMs
+    seo___twitterImage___remoteFile___dev
+    seo___twitterImage___remoteFile___dir
+    seo___twitterImage___remoteFile___ext
+    seo___twitterImage___remoteFile___extension
+    seo___twitterImage___remoteFile___gid
+    seo___twitterImage___remoteFile___id
+    seo___twitterImage___remoteFile___ino
+    seo___twitterImage___remoteFile___mode
+    seo___twitterImage___remoteFile___modifiedTime
+    seo___twitterImage___remoteFile___mtime
+    seo___twitterImage___remoteFile___mtimeMs
+    seo___twitterImage___remoteFile___name
+    seo___twitterImage___remoteFile___nlink
+    seo___twitterImage___remoteFile___prettySize
+    seo___twitterImage___remoteFile___publicURL
+    seo___twitterImage___remoteFile___rdev
+    seo___twitterImage___remoteFile___relativeDirectory
+    seo___twitterImage___remoteFile___relativePath
+    seo___twitterImage___remoteFile___root
+    seo___twitterImage___remoteFile___size
+    seo___twitterImage___remoteFile___sourceInstanceName
+    seo___twitterImage___remoteFile___uid
+    seo___twitterImage___remoteFile___url
+    seo___twitterImage___seo___breadcrumbs
+    seo___twitterImage___seo___canonical
+    seo___twitterImage___seo___focuskw
+    seo___twitterImage___seo___metaDesc
+    seo___twitterImage___seo___metaKeywords
+    seo___twitterImage___seo___metaRobotsNofollow
+    seo___twitterImage___seo___metaRobotsNoindex
+    seo___twitterImage___seo___opengraphAuthor
+    seo___twitterImage___seo___opengraphDescription
+    seo___twitterImage___seo___opengraphModifiedTime
+    seo___twitterImage___seo___opengraphPublishedTime
+    seo___twitterImage___seo___opengraphPublisher
+    seo___twitterImage___seo___opengraphSiteName
+    seo___twitterImage___seo___opengraphTitle
+    seo___twitterImage___seo___opengraphType
+    seo___twitterImage___seo___opengraphUrl
+    seo___twitterImage___seo___title
+    seo___twitterImage___seo___twitterDescription
+    seo___twitterImage___seo___twitterTitle
+    seo___twitterImage___sizes
+    seo___twitterImage___slug
+    seo___twitterImage___sourceUrl
+    seo___twitterImage___srcSet
+    seo___twitterImage___status
+    seo___twitterImage___terms___nodes
+    seo___twitterImage___title
+    seo___twitterImage___uri
+    seo___twitterImage___wpChildren___nodes
+    seo___twitterTitle
     slug
     taxonomy___node___archivePath
     taxonomy___node___children
@@ -3288,6 +3875,25 @@ enum WpCategoryFieldsEnum {
     wpChildren___nodes___parent___children
     wpChildren___nodes___parent___id
     wpChildren___nodes___posts___nodes
+    wpChildren___nodes___seo___breadcrumbs
+    wpChildren___nodes___seo___canonical
+    wpChildren___nodes___seo___focuskw
+    wpChildren___nodes___seo___metaDesc
+    wpChildren___nodes___seo___metaKeywords
+    wpChildren___nodes___seo___metaRobotsNofollow
+    wpChildren___nodes___seo___metaRobotsNoindex
+    wpChildren___nodes___seo___opengraphAuthor
+    wpChildren___nodes___seo___opengraphDescription
+    wpChildren___nodes___seo___opengraphModifiedTime
+    wpChildren___nodes___seo___opengraphPublishedTime
+    wpChildren___nodes___seo___opengraphPublisher
+    wpChildren___nodes___seo___opengraphSiteName
+    wpChildren___nodes___seo___opengraphTitle
+    wpChildren___nodes___seo___opengraphType
+    wpChildren___nodes___seo___opengraphUrl
+    wpChildren___nodes___seo___title
+    wpChildren___nodes___seo___twitterDescription
+    wpChildren___nodes___seo___twitterTitle
     wpChildren___nodes___slug
     wpChildren___nodes___termGroupId
     wpChildren___nodes___termTaxonomyId
@@ -3317,6 +3923,25 @@ enum WpCategoryFieldsEnum {
     wpParent___node___parent___children
     wpParent___node___parent___id
     wpParent___node___posts___nodes
+    wpParent___node___seo___breadcrumbs
+    wpParent___node___seo___canonical
+    wpParent___node___seo___focuskw
+    wpParent___node___seo___metaDesc
+    wpParent___node___seo___metaKeywords
+    wpParent___node___seo___metaRobotsNofollow
+    wpParent___node___seo___metaRobotsNoindex
+    wpParent___node___seo___opengraphAuthor
+    wpParent___node___seo___opengraphDescription
+    wpParent___node___seo___opengraphModifiedTime
+    wpParent___node___seo___opengraphPublishedTime
+    wpParent___node___seo___opengraphPublisher
+    wpParent___node___seo___opengraphSiteName
+    wpParent___node___seo___opengraphTitle
+    wpParent___node___seo___opengraphType
+    wpParent___node___seo___opengraphUrl
+    wpParent___node___seo___title
+    wpParent___node___seo___twitterDescription
+    wpParent___node___seo___twitterTitle
     wpParent___node___slug
     wpParent___node___termGroupId
     wpParent___node___termTaxonomyId
@@ -3544,6 +4169,10 @@ enum WpContentNodeFieldsEnum {
     lastEditedBy___node___posts___nodes
     lastEditedBy___node___registeredDate
     lastEditedBy___node___roles___nodes
+    lastEditedBy___node___seo___metaDesc
+    lastEditedBy___node___seo___metaRobotsNofollow
+    lastEditedBy___node___seo___metaRobotsNoindex
+    lastEditedBy___node___seo___title
     lastEditedBy___node___slug
     lastEditedBy___node___uri
     lastEditedBy___node___url
@@ -3876,6 +4505,169 @@ enum WpFieldsEnum {
     parent___parent___parent___children
     parent___parent___parent___id
     readingSettings___postsPerPage
+    seo___breadcrumbs___archivePrefix
+    seo___breadcrumbs___boldLast
+    seo___breadcrumbs___enabled
+    seo___breadcrumbs___homeText
+    seo___breadcrumbs___notFoundText
+    seo___breadcrumbs___prefix
+    seo___breadcrumbs___searchPrefix
+    seo___breadcrumbs___separator
+    seo___breadcrumbs___showBlogPage
+    seo___openGraph___defaultImage___altText
+    seo___openGraph___defaultImage___authorDatabaseId
+    seo___openGraph___defaultImage___authorId
+    seo___openGraph___defaultImage___caption
+    seo___openGraph___defaultImage___children
+    seo___openGraph___defaultImage___commentCount
+    seo___openGraph___defaultImage___commentStatus
+    seo___openGraph___defaultImage___databaseId
+    seo___openGraph___defaultImage___date
+    seo___openGraph___defaultImage___dateGmt
+    seo___openGraph___defaultImage___description
+    seo___openGraph___defaultImage___desiredSlug
+    seo___openGraph___defaultImage___enclosure
+    seo___openGraph___defaultImage___fileSize
+    seo___openGraph___defaultImage___guid
+    seo___openGraph___defaultImage___id
+    seo___openGraph___defaultImage___link
+    seo___openGraph___defaultImage___mediaItemUrl
+    seo___openGraph___defaultImage___mediaType
+    seo___openGraph___defaultImage___mimeType
+    seo___openGraph___defaultImage___modified
+    seo___openGraph___defaultImage___modifiedGmt
+    seo___openGraph___defaultImage___nodeType
+    seo___openGraph___defaultImage___parentDatabaseId
+    seo___openGraph___defaultImage___parentId
+    seo___openGraph___defaultImage___sizes
+    seo___openGraph___defaultImage___slug
+    seo___openGraph___defaultImage___sourceUrl
+    seo___openGraph___defaultImage___srcSet
+    seo___openGraph___defaultImage___status
+    seo___openGraph___defaultImage___title
+    seo___openGraph___defaultImage___uri
+    seo___openGraph___frontPage___description
+    seo___openGraph___frontPage___title
+    seo___redirects
+    seo___redirects___format
+    seo___redirects___origin
+    seo___redirects___target
+    seo___redirects___type
+    seo___schema___companyLogo___altText
+    seo___schema___companyLogo___authorDatabaseId
+    seo___schema___companyLogo___authorId
+    seo___schema___companyLogo___caption
+    seo___schema___companyLogo___children
+    seo___schema___companyLogo___commentCount
+    seo___schema___companyLogo___commentStatus
+    seo___schema___companyLogo___databaseId
+    seo___schema___companyLogo___date
+    seo___schema___companyLogo___dateGmt
+    seo___schema___companyLogo___description
+    seo___schema___companyLogo___desiredSlug
+    seo___schema___companyLogo___enclosure
+    seo___schema___companyLogo___fileSize
+    seo___schema___companyLogo___guid
+    seo___schema___companyLogo___id
+    seo___schema___companyLogo___link
+    seo___schema___companyLogo___mediaItemUrl
+    seo___schema___companyLogo___mediaType
+    seo___schema___companyLogo___mimeType
+    seo___schema___companyLogo___modified
+    seo___schema___companyLogo___modifiedGmt
+    seo___schema___companyLogo___nodeType
+    seo___schema___companyLogo___parentDatabaseId
+    seo___schema___companyLogo___parentId
+    seo___schema___companyLogo___sizes
+    seo___schema___companyLogo___slug
+    seo___schema___companyLogo___sourceUrl
+    seo___schema___companyLogo___srcSet
+    seo___schema___companyLogo___status
+    seo___schema___companyLogo___title
+    seo___schema___companyLogo___uri
+    seo___schema___companyName
+    seo___schema___companyOrPerson
+    seo___schema___inLanguage
+    seo___schema___logo___altText
+    seo___schema___logo___authorDatabaseId
+    seo___schema___logo___authorId
+    seo___schema___logo___caption
+    seo___schema___logo___children
+    seo___schema___logo___commentCount
+    seo___schema___logo___commentStatus
+    seo___schema___logo___databaseId
+    seo___schema___logo___date
+    seo___schema___logo___dateGmt
+    seo___schema___logo___description
+    seo___schema___logo___desiredSlug
+    seo___schema___logo___enclosure
+    seo___schema___logo___fileSize
+    seo___schema___logo___guid
+    seo___schema___logo___id
+    seo___schema___logo___link
+    seo___schema___logo___mediaItemUrl
+    seo___schema___logo___mediaType
+    seo___schema___logo___mimeType
+    seo___schema___logo___modified
+    seo___schema___logo___modifiedGmt
+    seo___schema___logo___nodeType
+    seo___schema___logo___parentDatabaseId
+    seo___schema___logo___parentId
+    seo___schema___logo___sizes
+    seo___schema___logo___slug
+    seo___schema___logo___sourceUrl
+    seo___schema___logo___srcSet
+    seo___schema___logo___status
+    seo___schema___logo___title
+    seo___schema___logo___uri
+    seo___schema___personLogo___altText
+    seo___schema___personLogo___authorDatabaseId
+    seo___schema___personLogo___authorId
+    seo___schema___personLogo___caption
+    seo___schema___personLogo___children
+    seo___schema___personLogo___commentCount
+    seo___schema___personLogo___commentStatus
+    seo___schema___personLogo___databaseId
+    seo___schema___personLogo___date
+    seo___schema___personLogo___dateGmt
+    seo___schema___personLogo___description
+    seo___schema___personLogo___desiredSlug
+    seo___schema___personLogo___enclosure
+    seo___schema___personLogo___fileSize
+    seo___schema___personLogo___guid
+    seo___schema___personLogo___id
+    seo___schema___personLogo___link
+    seo___schema___personLogo___mediaItemUrl
+    seo___schema___personLogo___mediaType
+    seo___schema___personLogo___mimeType
+    seo___schema___personLogo___modified
+    seo___schema___personLogo___modifiedGmt
+    seo___schema___personLogo___nodeType
+    seo___schema___personLogo___parentDatabaseId
+    seo___schema___personLogo___parentId
+    seo___schema___personLogo___sizes
+    seo___schema___personLogo___slug
+    seo___schema___personLogo___sourceUrl
+    seo___schema___personLogo___srcSet
+    seo___schema___personLogo___status
+    seo___schema___personLogo___title
+    seo___schema___personLogo___uri
+    seo___schema___siteName
+    seo___schema___siteUrl
+    seo___schema___wordpressSiteName
+    seo___social___facebook___url
+    seo___social___instagram___url
+    seo___social___linkedIn___url
+    seo___social___mySpace___url
+    seo___social___pinterest___metaTag
+    seo___social___pinterest___url
+    seo___social___twitter___username
+    seo___social___wikipedia___url
+    seo___social___youTube___url
+    seo___webmaster___baiduVerify
+    seo___webmaster___googleVerify
+    seo___webmaster___msVerify
+    seo___webmaster___yandexVerify
     writingSettings___defaultCategory
     writingSettings___defaultPostFormat
     writingSettings___useSmilies
@@ -3943,6 +4735,10 @@ enum WpMediaItemFieldsEnum {
     author___node___posts___nodes
     author___node___registeredDate
     author___node___roles___nodes
+    author___node___seo___metaDesc
+    author___node___seo___metaRobotsNofollow
+    author___node___seo___metaRobotsNoindex
+    author___node___seo___title
     author___node___slug
     author___node___uri
     author___node___url
@@ -4142,6 +4938,10 @@ enum WpMediaItemFieldsEnum {
     lastEditedBy___node___posts___nodes
     lastEditedBy___node___registeredDate
     lastEditedBy___node___roles___nodes
+    lastEditedBy___node___seo___metaDesc
+    lastEditedBy___node___seo___metaRobotsNofollow
+    lastEditedBy___node___seo___metaRobotsNoindex
+    lastEditedBy___node___seo___title
     lastEditedBy___node___slug
     lastEditedBy___node___uri
     lastEditedBy___node___url
@@ -4496,6 +5296,317 @@ enum WpMediaItemFieldsEnum {
     remoteFile___sourceInstanceName
     remoteFile___uid
     remoteFile___url
+    seo___breadcrumbs
+    seo___breadcrumbs___text
+    seo___breadcrumbs___url
+    seo___canonical
+    seo___focuskw
+    seo___metaDesc
+    seo___metaKeywords
+    seo___metaRobotsNofollow
+    seo___metaRobotsNoindex
+    seo___opengraphAuthor
+    seo___opengraphDescription
+    seo___opengraphImage___altText
+    seo___opengraphImage___ancestors___nodes
+    seo___opengraphImage___authorDatabaseId
+    seo___opengraphImage___authorId
+    seo___opengraphImage___caption
+    seo___opengraphImage___children
+    seo___opengraphImage___children___children
+    seo___opengraphImage___children___id
+    seo___opengraphImage___commentCount
+    seo___opengraphImage___commentStatus
+    seo___opengraphImage___comments___nodes
+    seo___opengraphImage___databaseId
+    seo___opengraphImage___date
+    seo___opengraphImage___dateGmt
+    seo___opengraphImage___description
+    seo___opengraphImage___desiredSlug
+    seo___opengraphImage___enclosure
+    seo___opengraphImage___fileSize
+    seo___opengraphImage___guid
+    seo___opengraphImage___id
+    seo___opengraphImage___internal___content
+    seo___opengraphImage___internal___contentDigest
+    seo___opengraphImage___internal___description
+    seo___opengraphImage___internal___fieldOwners
+    seo___opengraphImage___internal___ignoreType
+    seo___opengraphImage___internal___mediaType
+    seo___opengraphImage___internal___owner
+    seo___opengraphImage___internal___type
+    seo___opengraphImage___link
+    seo___opengraphImage___localFile___absolutePath
+    seo___opengraphImage___localFile___accessTime
+    seo___opengraphImage___localFile___atime
+    seo___opengraphImage___localFile___atimeMs
+    seo___opengraphImage___localFile___base
+    seo___opengraphImage___localFile___birthTime
+    seo___opengraphImage___localFile___birthtime
+    seo___opengraphImage___localFile___birthtimeMs
+    seo___opengraphImage___localFile___blksize
+    seo___opengraphImage___localFile___blocks
+    seo___opengraphImage___localFile___changeTime
+    seo___opengraphImage___localFile___children
+    seo___opengraphImage___localFile___ctime
+    seo___opengraphImage___localFile___ctimeMs
+    seo___opengraphImage___localFile___dev
+    seo___opengraphImage___localFile___dir
+    seo___opengraphImage___localFile___ext
+    seo___opengraphImage___localFile___extension
+    seo___opengraphImage___localFile___gid
+    seo___opengraphImage___localFile___id
+    seo___opengraphImage___localFile___ino
+    seo___opengraphImage___localFile___mode
+    seo___opengraphImage___localFile___modifiedTime
+    seo___opengraphImage___localFile___mtime
+    seo___opengraphImage___localFile___mtimeMs
+    seo___opengraphImage___localFile___name
+    seo___opengraphImage___localFile___nlink
+    seo___opengraphImage___localFile___prettySize
+    seo___opengraphImage___localFile___publicURL
+    seo___opengraphImage___localFile___rdev
+    seo___opengraphImage___localFile___relativeDirectory
+    seo___opengraphImage___localFile___relativePath
+    seo___opengraphImage___localFile___root
+    seo___opengraphImage___localFile___size
+    seo___opengraphImage___localFile___sourceInstanceName
+    seo___opengraphImage___localFile___uid
+    seo___opengraphImage___localFile___url
+    seo___opengraphImage___mediaDetails___file
+    seo___opengraphImage___mediaDetails___height
+    seo___opengraphImage___mediaDetails___sizes
+    seo___opengraphImage___mediaDetails___width
+    seo___opengraphImage___mediaItemUrl
+    seo___opengraphImage___mediaType
+    seo___opengraphImage___mimeType
+    seo___opengraphImage___modified
+    seo___opengraphImage___modifiedGmt
+    seo___opengraphImage___nodeType
+    seo___opengraphImage___parentDatabaseId
+    seo___opengraphImage___parentId
+    seo___opengraphImage___parent___children
+    seo___opengraphImage___parent___id
+    seo___opengraphImage___remoteFile___absolutePath
+    seo___opengraphImage___remoteFile___accessTime
+    seo___opengraphImage___remoteFile___atime
+    seo___opengraphImage___remoteFile___atimeMs
+    seo___opengraphImage___remoteFile___base
+    seo___opengraphImage___remoteFile___birthTime
+    seo___opengraphImage___remoteFile___birthtime
+    seo___opengraphImage___remoteFile___birthtimeMs
+    seo___opengraphImage___remoteFile___blksize
+    seo___opengraphImage___remoteFile___blocks
+    seo___opengraphImage___remoteFile___changeTime
+    seo___opengraphImage___remoteFile___children
+    seo___opengraphImage___remoteFile___ctime
+    seo___opengraphImage___remoteFile___ctimeMs
+    seo___opengraphImage___remoteFile___dev
+    seo___opengraphImage___remoteFile___dir
+    seo___opengraphImage___remoteFile___ext
+    seo___opengraphImage___remoteFile___extension
+    seo___opengraphImage___remoteFile___gid
+    seo___opengraphImage___remoteFile___id
+    seo___opengraphImage___remoteFile___ino
+    seo___opengraphImage___remoteFile___mode
+    seo___opengraphImage___remoteFile___modifiedTime
+    seo___opengraphImage___remoteFile___mtime
+    seo___opengraphImage___remoteFile___mtimeMs
+    seo___opengraphImage___remoteFile___name
+    seo___opengraphImage___remoteFile___nlink
+    seo___opengraphImage___remoteFile___prettySize
+    seo___opengraphImage___remoteFile___publicURL
+    seo___opengraphImage___remoteFile___rdev
+    seo___opengraphImage___remoteFile___relativeDirectory
+    seo___opengraphImage___remoteFile___relativePath
+    seo___opengraphImage___remoteFile___root
+    seo___opengraphImage___remoteFile___size
+    seo___opengraphImage___remoteFile___sourceInstanceName
+    seo___opengraphImage___remoteFile___uid
+    seo___opengraphImage___remoteFile___url
+    seo___opengraphImage___seo___breadcrumbs
+    seo___opengraphImage___seo___canonical
+    seo___opengraphImage___seo___focuskw
+    seo___opengraphImage___seo___metaDesc
+    seo___opengraphImage___seo___metaKeywords
+    seo___opengraphImage___seo___metaRobotsNofollow
+    seo___opengraphImage___seo___metaRobotsNoindex
+    seo___opengraphImage___seo___opengraphAuthor
+    seo___opengraphImage___seo___opengraphDescription
+    seo___opengraphImage___seo___opengraphModifiedTime
+    seo___opengraphImage___seo___opengraphPublishedTime
+    seo___opengraphImage___seo___opengraphPublisher
+    seo___opengraphImage___seo___opengraphSiteName
+    seo___opengraphImage___seo___opengraphTitle
+    seo___opengraphImage___seo___opengraphType
+    seo___opengraphImage___seo___opengraphUrl
+    seo___opengraphImage___seo___title
+    seo___opengraphImage___seo___twitterDescription
+    seo___opengraphImage___seo___twitterTitle
+    seo___opengraphImage___sizes
+    seo___opengraphImage___slug
+    seo___opengraphImage___sourceUrl
+    seo___opengraphImage___srcSet
+    seo___opengraphImage___status
+    seo___opengraphImage___terms___nodes
+    seo___opengraphImage___title
+    seo___opengraphImage___uri
+    seo___opengraphImage___wpChildren___nodes
+    seo___opengraphModifiedTime
+    seo___opengraphPublishedTime
+    seo___opengraphPublisher
+    seo___opengraphSiteName
+    seo___opengraphTitle
+    seo___opengraphType
+    seo___opengraphUrl
+    seo___title
+    seo___twitterDescription
+    seo___twitterImage___altText
+    seo___twitterImage___ancestors___nodes
+    seo___twitterImage___authorDatabaseId
+    seo___twitterImage___authorId
+    seo___twitterImage___caption
+    seo___twitterImage___children
+    seo___twitterImage___children___children
+    seo___twitterImage___children___id
+    seo___twitterImage___commentCount
+    seo___twitterImage___commentStatus
+    seo___twitterImage___comments___nodes
+    seo___twitterImage___databaseId
+    seo___twitterImage___date
+    seo___twitterImage___dateGmt
+    seo___twitterImage___description
+    seo___twitterImage___desiredSlug
+    seo___twitterImage___enclosure
+    seo___twitterImage___fileSize
+    seo___twitterImage___guid
+    seo___twitterImage___id
+    seo___twitterImage___internal___content
+    seo___twitterImage___internal___contentDigest
+    seo___twitterImage___internal___description
+    seo___twitterImage___internal___fieldOwners
+    seo___twitterImage___internal___ignoreType
+    seo___twitterImage___internal___mediaType
+    seo___twitterImage___internal___owner
+    seo___twitterImage___internal___type
+    seo___twitterImage___link
+    seo___twitterImage___localFile___absolutePath
+    seo___twitterImage___localFile___accessTime
+    seo___twitterImage___localFile___atime
+    seo___twitterImage___localFile___atimeMs
+    seo___twitterImage___localFile___base
+    seo___twitterImage___localFile___birthTime
+    seo___twitterImage___localFile___birthtime
+    seo___twitterImage___localFile___birthtimeMs
+    seo___twitterImage___localFile___blksize
+    seo___twitterImage___localFile___blocks
+    seo___twitterImage___localFile___changeTime
+    seo___twitterImage___localFile___children
+    seo___twitterImage___localFile___ctime
+    seo___twitterImage___localFile___ctimeMs
+    seo___twitterImage___localFile___dev
+    seo___twitterImage___localFile___dir
+    seo___twitterImage___localFile___ext
+    seo___twitterImage___localFile___extension
+    seo___twitterImage___localFile___gid
+    seo___twitterImage___localFile___id
+    seo___twitterImage___localFile___ino
+    seo___twitterImage___localFile___mode
+    seo___twitterImage___localFile___modifiedTime
+    seo___twitterImage___localFile___mtime
+    seo___twitterImage___localFile___mtimeMs
+    seo___twitterImage___localFile___name
+    seo___twitterImage___localFile___nlink
+    seo___twitterImage___localFile___prettySize
+    seo___twitterImage___localFile___publicURL
+    seo___twitterImage___localFile___rdev
+    seo___twitterImage___localFile___relativeDirectory
+    seo___twitterImage___localFile___relativePath
+    seo___twitterImage___localFile___root
+    seo___twitterImage___localFile___size
+    seo___twitterImage___localFile___sourceInstanceName
+    seo___twitterImage___localFile___uid
+    seo___twitterImage___localFile___url
+    seo___twitterImage___mediaDetails___file
+    seo___twitterImage___mediaDetails___height
+    seo___twitterImage___mediaDetails___sizes
+    seo___twitterImage___mediaDetails___width
+    seo___twitterImage___mediaItemUrl
+    seo___twitterImage___mediaType
+    seo___twitterImage___mimeType
+    seo___twitterImage___modified
+    seo___twitterImage___modifiedGmt
+    seo___twitterImage___nodeType
+    seo___twitterImage___parentDatabaseId
+    seo___twitterImage___parentId
+    seo___twitterImage___parent___children
+    seo___twitterImage___parent___id
+    seo___twitterImage___remoteFile___absolutePath
+    seo___twitterImage___remoteFile___accessTime
+    seo___twitterImage___remoteFile___atime
+    seo___twitterImage___remoteFile___atimeMs
+    seo___twitterImage___remoteFile___base
+    seo___twitterImage___remoteFile___birthTime
+    seo___twitterImage___remoteFile___birthtime
+    seo___twitterImage___remoteFile___birthtimeMs
+    seo___twitterImage___remoteFile___blksize
+    seo___twitterImage___remoteFile___blocks
+    seo___twitterImage___remoteFile___changeTime
+    seo___twitterImage___remoteFile___children
+    seo___twitterImage___remoteFile___ctime
+    seo___twitterImage___remoteFile___ctimeMs
+    seo___twitterImage___remoteFile___dev
+    seo___twitterImage___remoteFile___dir
+    seo___twitterImage___remoteFile___ext
+    seo___twitterImage___remoteFile___extension
+    seo___twitterImage___remoteFile___gid
+    seo___twitterImage___remoteFile___id
+    seo___twitterImage___remoteFile___ino
+    seo___twitterImage___remoteFile___mode
+    seo___twitterImage___remoteFile___modifiedTime
+    seo___twitterImage___remoteFile___mtime
+    seo___twitterImage___remoteFile___mtimeMs
+    seo___twitterImage___remoteFile___name
+    seo___twitterImage___remoteFile___nlink
+    seo___twitterImage___remoteFile___prettySize
+    seo___twitterImage___remoteFile___publicURL
+    seo___twitterImage___remoteFile___rdev
+    seo___twitterImage___remoteFile___relativeDirectory
+    seo___twitterImage___remoteFile___relativePath
+    seo___twitterImage___remoteFile___root
+    seo___twitterImage___remoteFile___size
+    seo___twitterImage___remoteFile___sourceInstanceName
+    seo___twitterImage___remoteFile___uid
+    seo___twitterImage___remoteFile___url
+    seo___twitterImage___seo___breadcrumbs
+    seo___twitterImage___seo___canonical
+    seo___twitterImage___seo___focuskw
+    seo___twitterImage___seo___metaDesc
+    seo___twitterImage___seo___metaKeywords
+    seo___twitterImage___seo___metaRobotsNofollow
+    seo___twitterImage___seo___metaRobotsNoindex
+    seo___twitterImage___seo___opengraphAuthor
+    seo___twitterImage___seo___opengraphDescription
+    seo___twitterImage___seo___opengraphModifiedTime
+    seo___twitterImage___seo___opengraphPublishedTime
+    seo___twitterImage___seo___opengraphPublisher
+    seo___twitterImage___seo___opengraphSiteName
+    seo___twitterImage___seo___opengraphTitle
+    seo___twitterImage___seo___opengraphType
+    seo___twitterImage___seo___opengraphUrl
+    seo___twitterImage___seo___title
+    seo___twitterImage___seo___twitterDescription
+    seo___twitterImage___seo___twitterTitle
+    seo___twitterImage___sizes
+    seo___twitterImage___slug
+    seo___twitterImage___sourceUrl
+    seo___twitterImage___srcSet
+    seo___twitterImage___status
+    seo___twitterImage___terms___nodes
+    seo___twitterImage___title
+    seo___twitterImage___uri
+    seo___twitterImage___wpChildren___nodes
+    seo___twitterTitle
     sizes
     slug
     sourceUrl
@@ -4896,6 +6007,10 @@ enum WpPageFieldsEnum {
     author___node___posts___nodes
     author___node___registeredDate
     author___node___roles___nodes
+    author___node___seo___metaDesc
+    author___node___seo___metaRobotsNofollow
+    author___node___seo___metaRobotsNoindex
+    author___node___seo___title
     author___node___slug
     author___node___uri
     author___node___url
@@ -5160,6 +6275,25 @@ enum WpPageFieldsEnum {
     featuredImage___node___remoteFile___sourceInstanceName
     featuredImage___node___remoteFile___uid
     featuredImage___node___remoteFile___url
+    featuredImage___node___seo___breadcrumbs
+    featuredImage___node___seo___canonical
+    featuredImage___node___seo___focuskw
+    featuredImage___node___seo___metaDesc
+    featuredImage___node___seo___metaKeywords
+    featuredImage___node___seo___metaRobotsNofollow
+    featuredImage___node___seo___metaRobotsNoindex
+    featuredImage___node___seo___opengraphAuthor
+    featuredImage___node___seo___opengraphDescription
+    featuredImage___node___seo___opengraphModifiedTime
+    featuredImage___node___seo___opengraphPublishedTime
+    featuredImage___node___seo___opengraphPublisher
+    featuredImage___node___seo___opengraphSiteName
+    featuredImage___node___seo___opengraphTitle
+    featuredImage___node___seo___opengraphType
+    featuredImage___node___seo___opengraphUrl
+    featuredImage___node___seo___title
+    featuredImage___node___seo___twitterDescription
+    featuredImage___node___seo___twitterTitle
     featuredImage___node___sizes
     featuredImage___node___slug
     featuredImage___node___sourceUrl
@@ -5170,6 +6304,153 @@ enum WpPageFieldsEnum {
     featuredImage___node___uri
     featuredImage___node___wpChildren___nodes
     guid
+    homepageMetaboxes___fieldGroupName
+    homepageMetaboxes___heroImage___altText
+    homepageMetaboxes___heroImage___ancestors___nodes
+    homepageMetaboxes___heroImage___authorDatabaseId
+    homepageMetaboxes___heroImage___authorId
+    homepageMetaboxes___heroImage___caption
+    homepageMetaboxes___heroImage___children
+    homepageMetaboxes___heroImage___children___children
+    homepageMetaboxes___heroImage___children___id
+    homepageMetaboxes___heroImage___commentCount
+    homepageMetaboxes___heroImage___commentStatus
+    homepageMetaboxes___heroImage___comments___nodes
+    homepageMetaboxes___heroImage___databaseId
+    homepageMetaboxes___heroImage___date
+    homepageMetaboxes___heroImage___dateGmt
+    homepageMetaboxes___heroImage___description
+    homepageMetaboxes___heroImage___desiredSlug
+    homepageMetaboxes___heroImage___enclosure
+    homepageMetaboxes___heroImage___fileSize
+    homepageMetaboxes___heroImage___guid
+    homepageMetaboxes___heroImage___id
+    homepageMetaboxes___heroImage___internal___content
+    homepageMetaboxes___heroImage___internal___contentDigest
+    homepageMetaboxes___heroImage___internal___description
+    homepageMetaboxes___heroImage___internal___fieldOwners
+    homepageMetaboxes___heroImage___internal___ignoreType
+    homepageMetaboxes___heroImage___internal___mediaType
+    homepageMetaboxes___heroImage___internal___owner
+    homepageMetaboxes___heroImage___internal___type
+    homepageMetaboxes___heroImage___link
+    homepageMetaboxes___heroImage___localFile___absolutePath
+    homepageMetaboxes___heroImage___localFile___accessTime
+    homepageMetaboxes___heroImage___localFile___atime
+    homepageMetaboxes___heroImage___localFile___atimeMs
+    homepageMetaboxes___heroImage___localFile___base
+    homepageMetaboxes___heroImage___localFile___birthTime
+    homepageMetaboxes___heroImage___localFile___birthtime
+    homepageMetaboxes___heroImage___localFile___birthtimeMs
+    homepageMetaboxes___heroImage___localFile___blksize
+    homepageMetaboxes___heroImage___localFile___blocks
+    homepageMetaboxes___heroImage___localFile___changeTime
+    homepageMetaboxes___heroImage___localFile___children
+    homepageMetaboxes___heroImage___localFile___ctime
+    homepageMetaboxes___heroImage___localFile___ctimeMs
+    homepageMetaboxes___heroImage___localFile___dev
+    homepageMetaboxes___heroImage___localFile___dir
+    homepageMetaboxes___heroImage___localFile___ext
+    homepageMetaboxes___heroImage___localFile___extension
+    homepageMetaboxes___heroImage___localFile___gid
+    homepageMetaboxes___heroImage___localFile___id
+    homepageMetaboxes___heroImage___localFile___ino
+    homepageMetaboxes___heroImage___localFile___mode
+    homepageMetaboxes___heroImage___localFile___modifiedTime
+    homepageMetaboxes___heroImage___localFile___mtime
+    homepageMetaboxes___heroImage___localFile___mtimeMs
+    homepageMetaboxes___heroImage___localFile___name
+    homepageMetaboxes___heroImage___localFile___nlink
+    homepageMetaboxes___heroImage___localFile___prettySize
+    homepageMetaboxes___heroImage___localFile___publicURL
+    homepageMetaboxes___heroImage___localFile___rdev
+    homepageMetaboxes___heroImage___localFile___relativeDirectory
+    homepageMetaboxes___heroImage___localFile___relativePath
+    homepageMetaboxes___heroImage___localFile___root
+    homepageMetaboxes___heroImage___localFile___size
+    homepageMetaboxes___heroImage___localFile___sourceInstanceName
+    homepageMetaboxes___heroImage___localFile___uid
+    homepageMetaboxes___heroImage___localFile___url
+    homepageMetaboxes___heroImage___mediaDetails___file
+    homepageMetaboxes___heroImage___mediaDetails___height
+    homepageMetaboxes___heroImage___mediaDetails___sizes
+    homepageMetaboxes___heroImage___mediaDetails___width
+    homepageMetaboxes___heroImage___mediaItemUrl
+    homepageMetaboxes___heroImage___mediaType
+    homepageMetaboxes___heroImage___mimeType
+    homepageMetaboxes___heroImage___modified
+    homepageMetaboxes___heroImage___modifiedGmt
+    homepageMetaboxes___heroImage___nodeType
+    homepageMetaboxes___heroImage___parentDatabaseId
+    homepageMetaboxes___heroImage___parentId
+    homepageMetaboxes___heroImage___parent___children
+    homepageMetaboxes___heroImage___parent___id
+    homepageMetaboxes___heroImage___remoteFile___absolutePath
+    homepageMetaboxes___heroImage___remoteFile___accessTime
+    homepageMetaboxes___heroImage___remoteFile___atime
+    homepageMetaboxes___heroImage___remoteFile___atimeMs
+    homepageMetaboxes___heroImage___remoteFile___base
+    homepageMetaboxes___heroImage___remoteFile___birthTime
+    homepageMetaboxes___heroImage___remoteFile___birthtime
+    homepageMetaboxes___heroImage___remoteFile___birthtimeMs
+    homepageMetaboxes___heroImage___remoteFile___blksize
+    homepageMetaboxes___heroImage___remoteFile___blocks
+    homepageMetaboxes___heroImage___remoteFile___changeTime
+    homepageMetaboxes___heroImage___remoteFile___children
+    homepageMetaboxes___heroImage___remoteFile___ctime
+    homepageMetaboxes___heroImage___remoteFile___ctimeMs
+    homepageMetaboxes___heroImage___remoteFile___dev
+    homepageMetaboxes___heroImage___remoteFile___dir
+    homepageMetaboxes___heroImage___remoteFile___ext
+    homepageMetaboxes___heroImage___remoteFile___extension
+    homepageMetaboxes___heroImage___remoteFile___gid
+    homepageMetaboxes___heroImage___remoteFile___id
+    homepageMetaboxes___heroImage___remoteFile___ino
+    homepageMetaboxes___heroImage___remoteFile___mode
+    homepageMetaboxes___heroImage___remoteFile___modifiedTime
+    homepageMetaboxes___heroImage___remoteFile___mtime
+    homepageMetaboxes___heroImage___remoteFile___mtimeMs
+    homepageMetaboxes___heroImage___remoteFile___name
+    homepageMetaboxes___heroImage___remoteFile___nlink
+    homepageMetaboxes___heroImage___remoteFile___prettySize
+    homepageMetaboxes___heroImage___remoteFile___publicURL
+    homepageMetaboxes___heroImage___remoteFile___rdev
+    homepageMetaboxes___heroImage___remoteFile___relativeDirectory
+    homepageMetaboxes___heroImage___remoteFile___relativePath
+    homepageMetaboxes___heroImage___remoteFile___root
+    homepageMetaboxes___heroImage___remoteFile___size
+    homepageMetaboxes___heroImage___remoteFile___sourceInstanceName
+    homepageMetaboxes___heroImage___remoteFile___uid
+    homepageMetaboxes___heroImage___remoteFile___url
+    homepageMetaboxes___heroImage___seo___breadcrumbs
+    homepageMetaboxes___heroImage___seo___canonical
+    homepageMetaboxes___heroImage___seo___focuskw
+    homepageMetaboxes___heroImage___seo___metaDesc
+    homepageMetaboxes___heroImage___seo___metaKeywords
+    homepageMetaboxes___heroImage___seo___metaRobotsNofollow
+    homepageMetaboxes___heroImage___seo___metaRobotsNoindex
+    homepageMetaboxes___heroImage___seo___opengraphAuthor
+    homepageMetaboxes___heroImage___seo___opengraphDescription
+    homepageMetaboxes___heroImage___seo___opengraphModifiedTime
+    homepageMetaboxes___heroImage___seo___opengraphPublishedTime
+    homepageMetaboxes___heroImage___seo___opengraphPublisher
+    homepageMetaboxes___heroImage___seo___opengraphSiteName
+    homepageMetaboxes___heroImage___seo___opengraphTitle
+    homepageMetaboxes___heroImage___seo___opengraphType
+    homepageMetaboxes___heroImage___seo___opengraphUrl
+    homepageMetaboxes___heroImage___seo___title
+    homepageMetaboxes___heroImage___seo___twitterDescription
+    homepageMetaboxes___heroImage___seo___twitterTitle
+    homepageMetaboxes___heroImage___sizes
+    homepageMetaboxes___heroImage___slug
+    homepageMetaboxes___heroImage___sourceUrl
+    homepageMetaboxes___heroImage___srcSet
+    homepageMetaboxes___heroImage___status
+    homepageMetaboxes___heroImage___terms___nodes
+    homepageMetaboxes___heroImage___title
+    homepageMetaboxes___heroImage___uri
+    homepageMetaboxes___heroImage___wpChildren___nodes
+    homepageMetaboxes___heroText
     id
     internal___content
     internal___contentDigest
@@ -5224,6 +6505,10 @@ enum WpPageFieldsEnum {
     lastEditedBy___node___posts___nodes
     lastEditedBy___node___registeredDate
     lastEditedBy___node___roles___nodes
+    lastEditedBy___node___seo___metaDesc
+    lastEditedBy___node___seo___metaRobotsNofollow
+    lastEditedBy___node___seo___metaRobotsNoindex
+    lastEditedBy___node___seo___title
     lastEditedBy___node___slug
     lastEditedBy___node___uri
     lastEditedBy___node___url
@@ -5233,6 +6518,7 @@ enum WpPageFieldsEnum {
     modified
     modifiedGmt
     nodeType
+    pageTemplate
     parentDatabaseId
     parentId
     parent___children
@@ -5273,6 +6559,317 @@ enum WpPageFieldsEnum {
     parent___parent___internal___type
     parent___parent___parent___children
     parent___parent___parent___id
+    seo___breadcrumbs
+    seo___breadcrumbs___text
+    seo___breadcrumbs___url
+    seo___canonical
+    seo___focuskw
+    seo___metaDesc
+    seo___metaKeywords
+    seo___metaRobotsNofollow
+    seo___metaRobotsNoindex
+    seo___opengraphAuthor
+    seo___opengraphDescription
+    seo___opengraphImage___altText
+    seo___opengraphImage___ancestors___nodes
+    seo___opengraphImage___authorDatabaseId
+    seo___opengraphImage___authorId
+    seo___opengraphImage___caption
+    seo___opengraphImage___children
+    seo___opengraphImage___children___children
+    seo___opengraphImage___children___id
+    seo___opengraphImage___commentCount
+    seo___opengraphImage___commentStatus
+    seo___opengraphImage___comments___nodes
+    seo___opengraphImage___databaseId
+    seo___opengraphImage___date
+    seo___opengraphImage___dateGmt
+    seo___opengraphImage___description
+    seo___opengraphImage___desiredSlug
+    seo___opengraphImage___enclosure
+    seo___opengraphImage___fileSize
+    seo___opengraphImage___guid
+    seo___opengraphImage___id
+    seo___opengraphImage___internal___content
+    seo___opengraphImage___internal___contentDigest
+    seo___opengraphImage___internal___description
+    seo___opengraphImage___internal___fieldOwners
+    seo___opengraphImage___internal___ignoreType
+    seo___opengraphImage___internal___mediaType
+    seo___opengraphImage___internal___owner
+    seo___opengraphImage___internal___type
+    seo___opengraphImage___link
+    seo___opengraphImage___localFile___absolutePath
+    seo___opengraphImage___localFile___accessTime
+    seo___opengraphImage___localFile___atime
+    seo___opengraphImage___localFile___atimeMs
+    seo___opengraphImage___localFile___base
+    seo___opengraphImage___localFile___birthTime
+    seo___opengraphImage___localFile___birthtime
+    seo___opengraphImage___localFile___birthtimeMs
+    seo___opengraphImage___localFile___blksize
+    seo___opengraphImage___localFile___blocks
+    seo___opengraphImage___localFile___changeTime
+    seo___opengraphImage___localFile___children
+    seo___opengraphImage___localFile___ctime
+    seo___opengraphImage___localFile___ctimeMs
+    seo___opengraphImage___localFile___dev
+    seo___opengraphImage___localFile___dir
+    seo___opengraphImage___localFile___ext
+    seo___opengraphImage___localFile___extension
+    seo___opengraphImage___localFile___gid
+    seo___opengraphImage___localFile___id
+    seo___opengraphImage___localFile___ino
+    seo___opengraphImage___localFile___mode
+    seo___opengraphImage___localFile___modifiedTime
+    seo___opengraphImage___localFile___mtime
+    seo___opengraphImage___localFile___mtimeMs
+    seo___opengraphImage___localFile___name
+    seo___opengraphImage___localFile___nlink
+    seo___opengraphImage___localFile___prettySize
+    seo___opengraphImage___localFile___publicURL
+    seo___opengraphImage___localFile___rdev
+    seo___opengraphImage___localFile___relativeDirectory
+    seo___opengraphImage___localFile___relativePath
+    seo___opengraphImage___localFile___root
+    seo___opengraphImage___localFile___size
+    seo___opengraphImage___localFile___sourceInstanceName
+    seo___opengraphImage___localFile___uid
+    seo___opengraphImage___localFile___url
+    seo___opengraphImage___mediaDetails___file
+    seo___opengraphImage___mediaDetails___height
+    seo___opengraphImage___mediaDetails___sizes
+    seo___opengraphImage___mediaDetails___width
+    seo___opengraphImage___mediaItemUrl
+    seo___opengraphImage___mediaType
+    seo___opengraphImage___mimeType
+    seo___opengraphImage___modified
+    seo___opengraphImage___modifiedGmt
+    seo___opengraphImage___nodeType
+    seo___opengraphImage___parentDatabaseId
+    seo___opengraphImage___parentId
+    seo___opengraphImage___parent___children
+    seo___opengraphImage___parent___id
+    seo___opengraphImage___remoteFile___absolutePath
+    seo___opengraphImage___remoteFile___accessTime
+    seo___opengraphImage___remoteFile___atime
+    seo___opengraphImage___remoteFile___atimeMs
+    seo___opengraphImage___remoteFile___base
+    seo___opengraphImage___remoteFile___birthTime
+    seo___opengraphImage___remoteFile___birthtime
+    seo___opengraphImage___remoteFile___birthtimeMs
+    seo___opengraphImage___remoteFile___blksize
+    seo___opengraphImage___remoteFile___blocks
+    seo___opengraphImage___remoteFile___changeTime
+    seo___opengraphImage___remoteFile___children
+    seo___opengraphImage___remoteFile___ctime
+    seo___opengraphImage___remoteFile___ctimeMs
+    seo___opengraphImage___remoteFile___dev
+    seo___opengraphImage___remoteFile___dir
+    seo___opengraphImage___remoteFile___ext
+    seo___opengraphImage___remoteFile___extension
+    seo___opengraphImage___remoteFile___gid
+    seo___opengraphImage___remoteFile___id
+    seo___opengraphImage___remoteFile___ino
+    seo___opengraphImage___remoteFile___mode
+    seo___opengraphImage___remoteFile___modifiedTime
+    seo___opengraphImage___remoteFile___mtime
+    seo___opengraphImage___remoteFile___mtimeMs
+    seo___opengraphImage___remoteFile___name
+    seo___opengraphImage___remoteFile___nlink
+    seo___opengraphImage___remoteFile___prettySize
+    seo___opengraphImage___remoteFile___publicURL
+    seo___opengraphImage___remoteFile___rdev
+    seo___opengraphImage___remoteFile___relativeDirectory
+    seo___opengraphImage___remoteFile___relativePath
+    seo___opengraphImage___remoteFile___root
+    seo___opengraphImage___remoteFile___size
+    seo___opengraphImage___remoteFile___sourceInstanceName
+    seo___opengraphImage___remoteFile___uid
+    seo___opengraphImage___remoteFile___url
+    seo___opengraphImage___seo___breadcrumbs
+    seo___opengraphImage___seo___canonical
+    seo___opengraphImage___seo___focuskw
+    seo___opengraphImage___seo___metaDesc
+    seo___opengraphImage___seo___metaKeywords
+    seo___opengraphImage___seo___metaRobotsNofollow
+    seo___opengraphImage___seo___metaRobotsNoindex
+    seo___opengraphImage___seo___opengraphAuthor
+    seo___opengraphImage___seo___opengraphDescription
+    seo___opengraphImage___seo___opengraphModifiedTime
+    seo___opengraphImage___seo___opengraphPublishedTime
+    seo___opengraphImage___seo___opengraphPublisher
+    seo___opengraphImage___seo___opengraphSiteName
+    seo___opengraphImage___seo___opengraphTitle
+    seo___opengraphImage___seo___opengraphType
+    seo___opengraphImage___seo___opengraphUrl
+    seo___opengraphImage___seo___title
+    seo___opengraphImage___seo___twitterDescription
+    seo___opengraphImage___seo___twitterTitle
+    seo___opengraphImage___sizes
+    seo___opengraphImage___slug
+    seo___opengraphImage___sourceUrl
+    seo___opengraphImage___srcSet
+    seo___opengraphImage___status
+    seo___opengraphImage___terms___nodes
+    seo___opengraphImage___title
+    seo___opengraphImage___uri
+    seo___opengraphImage___wpChildren___nodes
+    seo___opengraphModifiedTime
+    seo___opengraphPublishedTime
+    seo___opengraphPublisher
+    seo___opengraphSiteName
+    seo___opengraphTitle
+    seo___opengraphType
+    seo___opengraphUrl
+    seo___title
+    seo___twitterDescription
+    seo___twitterImage___altText
+    seo___twitterImage___ancestors___nodes
+    seo___twitterImage___authorDatabaseId
+    seo___twitterImage___authorId
+    seo___twitterImage___caption
+    seo___twitterImage___children
+    seo___twitterImage___children___children
+    seo___twitterImage___children___id
+    seo___twitterImage___commentCount
+    seo___twitterImage___commentStatus
+    seo___twitterImage___comments___nodes
+    seo___twitterImage___databaseId
+    seo___twitterImage___date
+    seo___twitterImage___dateGmt
+    seo___twitterImage___description
+    seo___twitterImage___desiredSlug
+    seo___twitterImage___enclosure
+    seo___twitterImage___fileSize
+    seo___twitterImage___guid
+    seo___twitterImage___id
+    seo___twitterImage___internal___content
+    seo___twitterImage___internal___contentDigest
+    seo___twitterImage___internal___description
+    seo___twitterImage___internal___fieldOwners
+    seo___twitterImage___internal___ignoreType
+    seo___twitterImage___internal___mediaType
+    seo___twitterImage___internal___owner
+    seo___twitterImage___internal___type
+    seo___twitterImage___link
+    seo___twitterImage___localFile___absolutePath
+    seo___twitterImage___localFile___accessTime
+    seo___twitterImage___localFile___atime
+    seo___twitterImage___localFile___atimeMs
+    seo___twitterImage___localFile___base
+    seo___twitterImage___localFile___birthTime
+    seo___twitterImage___localFile___birthtime
+    seo___twitterImage___localFile___birthtimeMs
+    seo___twitterImage___localFile___blksize
+    seo___twitterImage___localFile___blocks
+    seo___twitterImage___localFile___changeTime
+    seo___twitterImage___localFile___children
+    seo___twitterImage___localFile___ctime
+    seo___twitterImage___localFile___ctimeMs
+    seo___twitterImage___localFile___dev
+    seo___twitterImage___localFile___dir
+    seo___twitterImage___localFile___ext
+    seo___twitterImage___localFile___extension
+    seo___twitterImage___localFile___gid
+    seo___twitterImage___localFile___id
+    seo___twitterImage___localFile___ino
+    seo___twitterImage___localFile___mode
+    seo___twitterImage___localFile___modifiedTime
+    seo___twitterImage___localFile___mtime
+    seo___twitterImage___localFile___mtimeMs
+    seo___twitterImage___localFile___name
+    seo___twitterImage___localFile___nlink
+    seo___twitterImage___localFile___prettySize
+    seo___twitterImage___localFile___publicURL
+    seo___twitterImage___localFile___rdev
+    seo___twitterImage___localFile___relativeDirectory
+    seo___twitterImage___localFile___relativePath
+    seo___twitterImage___localFile___root
+    seo___twitterImage___localFile___size
+    seo___twitterImage___localFile___sourceInstanceName
+    seo___twitterImage___localFile___uid
+    seo___twitterImage___localFile___url
+    seo___twitterImage___mediaDetails___file
+    seo___twitterImage___mediaDetails___height
+    seo___twitterImage___mediaDetails___sizes
+    seo___twitterImage___mediaDetails___width
+    seo___twitterImage___mediaItemUrl
+    seo___twitterImage___mediaType
+    seo___twitterImage___mimeType
+    seo___twitterImage___modified
+    seo___twitterImage___modifiedGmt
+    seo___twitterImage___nodeType
+    seo___twitterImage___parentDatabaseId
+    seo___twitterImage___parentId
+    seo___twitterImage___parent___children
+    seo___twitterImage___parent___id
+    seo___twitterImage___remoteFile___absolutePath
+    seo___twitterImage___remoteFile___accessTime
+    seo___twitterImage___remoteFile___atime
+    seo___twitterImage___remoteFile___atimeMs
+    seo___twitterImage___remoteFile___base
+    seo___twitterImage___remoteFile___birthTime
+    seo___twitterImage___remoteFile___birthtime
+    seo___twitterImage___remoteFile___birthtimeMs
+    seo___twitterImage___remoteFile___blksize
+    seo___twitterImage___remoteFile___blocks
+    seo___twitterImage___remoteFile___changeTime
+    seo___twitterImage___remoteFile___children
+    seo___twitterImage___remoteFile___ctime
+    seo___twitterImage___remoteFile___ctimeMs
+    seo___twitterImage___remoteFile___dev
+    seo___twitterImage___remoteFile___dir
+    seo___twitterImage___remoteFile___ext
+    seo___twitterImage___remoteFile___extension
+    seo___twitterImage___remoteFile___gid
+    seo___twitterImage___remoteFile___id
+    seo___twitterImage___remoteFile___ino
+    seo___twitterImage___remoteFile___mode
+    seo___twitterImage___remoteFile___modifiedTime
+    seo___twitterImage___remoteFile___mtime
+    seo___twitterImage___remoteFile___mtimeMs
+    seo___twitterImage___remoteFile___name
+    seo___twitterImage___remoteFile___nlink
+    seo___twitterImage___remoteFile___prettySize
+    seo___twitterImage___remoteFile___publicURL
+    seo___twitterImage___remoteFile___rdev
+    seo___twitterImage___remoteFile___relativeDirectory
+    seo___twitterImage___remoteFile___relativePath
+    seo___twitterImage___remoteFile___root
+    seo___twitterImage___remoteFile___size
+    seo___twitterImage___remoteFile___sourceInstanceName
+    seo___twitterImage___remoteFile___uid
+    seo___twitterImage___remoteFile___url
+    seo___twitterImage___seo___breadcrumbs
+    seo___twitterImage___seo___canonical
+    seo___twitterImage___seo___focuskw
+    seo___twitterImage___seo___metaDesc
+    seo___twitterImage___seo___metaKeywords
+    seo___twitterImage___seo___metaRobotsNofollow
+    seo___twitterImage___seo___metaRobotsNoindex
+    seo___twitterImage___seo___opengraphAuthor
+    seo___twitterImage___seo___opengraphDescription
+    seo___twitterImage___seo___opengraphModifiedTime
+    seo___twitterImage___seo___opengraphPublishedTime
+    seo___twitterImage___seo___opengraphPublisher
+    seo___twitterImage___seo___opengraphSiteName
+    seo___twitterImage___seo___opengraphTitle
+    seo___twitterImage___seo___opengraphType
+    seo___twitterImage___seo___opengraphUrl
+    seo___twitterImage___seo___title
+    seo___twitterImage___seo___twitterDescription
+    seo___twitterImage___seo___twitterTitle
+    seo___twitterImage___sizes
+    seo___twitterImage___slug
+    seo___twitterImage___sourceUrl
+    seo___twitterImage___srcSet
+    seo___twitterImage___status
+    seo___twitterImage___terms___nodes
+    seo___twitterImage___title
+    seo___twitterImage___uri
+    seo___twitterImage___wpChildren___nodes
+    seo___twitterTitle
     slug
     status
     terms___nodes
@@ -5367,6 +6964,10 @@ enum WpPostFieldsEnum {
     author___node___posts___nodes
     author___node___registeredDate
     author___node___roles___nodes
+    author___node___seo___metaDesc
+    author___node___seo___metaRobotsNofollow
+    author___node___seo___metaRobotsNoindex
+    author___node___seo___title
     author___node___slug
     author___node___uri
     author___node___url
@@ -5396,6 +6997,25 @@ enum WpPostFieldsEnum {
     categories___nodes___parent___children
     categories___nodes___parent___id
     categories___nodes___posts___nodes
+    categories___nodes___seo___breadcrumbs
+    categories___nodes___seo___canonical
+    categories___nodes___seo___focuskw
+    categories___nodes___seo___metaDesc
+    categories___nodes___seo___metaKeywords
+    categories___nodes___seo___metaRobotsNofollow
+    categories___nodes___seo___metaRobotsNoindex
+    categories___nodes___seo___opengraphAuthor
+    categories___nodes___seo___opengraphDescription
+    categories___nodes___seo___opengraphModifiedTime
+    categories___nodes___seo___opengraphPublishedTime
+    categories___nodes___seo___opengraphPublisher
+    categories___nodes___seo___opengraphSiteName
+    categories___nodes___seo___opengraphTitle
+    categories___nodes___seo___opengraphType
+    categories___nodes___seo___opengraphUrl
+    categories___nodes___seo___title
+    categories___nodes___seo___twitterDescription
+    categories___nodes___seo___twitterTitle
     categories___nodes___slug
     categories___nodes___termGroupId
     categories___nodes___termTaxonomyId
@@ -5662,6 +7282,25 @@ enum WpPostFieldsEnum {
     featuredImage___node___remoteFile___sourceInstanceName
     featuredImage___node___remoteFile___uid
     featuredImage___node___remoteFile___url
+    featuredImage___node___seo___breadcrumbs
+    featuredImage___node___seo___canonical
+    featuredImage___node___seo___focuskw
+    featuredImage___node___seo___metaDesc
+    featuredImage___node___seo___metaKeywords
+    featuredImage___node___seo___metaRobotsNofollow
+    featuredImage___node___seo___metaRobotsNoindex
+    featuredImage___node___seo___opengraphAuthor
+    featuredImage___node___seo___opengraphDescription
+    featuredImage___node___seo___opengraphModifiedTime
+    featuredImage___node___seo___opengraphPublishedTime
+    featuredImage___node___seo___opengraphPublisher
+    featuredImage___node___seo___opengraphSiteName
+    featuredImage___node___seo___opengraphTitle
+    featuredImage___node___seo___opengraphType
+    featuredImage___node___seo___opengraphUrl
+    featuredImage___node___seo___title
+    featuredImage___node___seo___twitterDescription
+    featuredImage___node___seo___twitterTitle
     featuredImage___node___sizes
     featuredImage___node___slug
     featuredImage___node___sourceUrl
@@ -5724,6 +7363,10 @@ enum WpPostFieldsEnum {
     lastEditedBy___node___posts___nodes
     lastEditedBy___node___registeredDate
     lastEditedBy___node___roles___nodes
+    lastEditedBy___node___seo___metaDesc
+    lastEditedBy___node___seo___metaRobotsNofollow
+    lastEditedBy___node___seo___metaRobotsNoindex
+    lastEditedBy___node___seo___title
     lastEditedBy___node___slug
     lastEditedBy___node___uri
     lastEditedBy___node___url
@@ -5794,10 +7437,340 @@ enum WpPostFieldsEnum {
     postFormats___nodes___parent___children
     postFormats___nodes___parent___id
     postFormats___nodes___posts___nodes
+    postFormats___nodes___seo___breadcrumbs
+    postFormats___nodes___seo___canonical
+    postFormats___nodes___seo___focuskw
+    postFormats___nodes___seo___metaDesc
+    postFormats___nodes___seo___metaKeywords
+    postFormats___nodes___seo___metaRobotsNofollow
+    postFormats___nodes___seo___metaRobotsNoindex
+    postFormats___nodes___seo___opengraphAuthor
+    postFormats___nodes___seo___opengraphDescription
+    postFormats___nodes___seo___opengraphModifiedTime
+    postFormats___nodes___seo___opengraphPublishedTime
+    postFormats___nodes___seo___opengraphPublisher
+    postFormats___nodes___seo___opengraphSiteName
+    postFormats___nodes___seo___opengraphTitle
+    postFormats___nodes___seo___opengraphType
+    postFormats___nodes___seo___opengraphUrl
+    postFormats___nodes___seo___title
+    postFormats___nodes___seo___twitterDescription
+    postFormats___nodes___seo___twitterTitle
     postFormats___nodes___slug
     postFormats___nodes___termGroupId
     postFormats___nodes___termTaxonomyId
     postFormats___nodes___uri
+    seo___breadcrumbs
+    seo___breadcrumbs___text
+    seo___breadcrumbs___url
+    seo___canonical
+    seo___focuskw
+    seo___metaDesc
+    seo___metaKeywords
+    seo___metaRobotsNofollow
+    seo___metaRobotsNoindex
+    seo___opengraphAuthor
+    seo___opengraphDescription
+    seo___opengraphImage___altText
+    seo___opengraphImage___ancestors___nodes
+    seo___opengraphImage___authorDatabaseId
+    seo___opengraphImage___authorId
+    seo___opengraphImage___caption
+    seo___opengraphImage___children
+    seo___opengraphImage___children___children
+    seo___opengraphImage___children___id
+    seo___opengraphImage___commentCount
+    seo___opengraphImage___commentStatus
+    seo___opengraphImage___comments___nodes
+    seo___opengraphImage___databaseId
+    seo___opengraphImage___date
+    seo___opengraphImage___dateGmt
+    seo___opengraphImage___description
+    seo___opengraphImage___desiredSlug
+    seo___opengraphImage___enclosure
+    seo___opengraphImage___fileSize
+    seo___opengraphImage___guid
+    seo___opengraphImage___id
+    seo___opengraphImage___internal___content
+    seo___opengraphImage___internal___contentDigest
+    seo___opengraphImage___internal___description
+    seo___opengraphImage___internal___fieldOwners
+    seo___opengraphImage___internal___ignoreType
+    seo___opengraphImage___internal___mediaType
+    seo___opengraphImage___internal___owner
+    seo___opengraphImage___internal___type
+    seo___opengraphImage___link
+    seo___opengraphImage___localFile___absolutePath
+    seo___opengraphImage___localFile___accessTime
+    seo___opengraphImage___localFile___atime
+    seo___opengraphImage___localFile___atimeMs
+    seo___opengraphImage___localFile___base
+    seo___opengraphImage___localFile___birthTime
+    seo___opengraphImage___localFile___birthtime
+    seo___opengraphImage___localFile___birthtimeMs
+    seo___opengraphImage___localFile___blksize
+    seo___opengraphImage___localFile___blocks
+    seo___opengraphImage___localFile___changeTime
+    seo___opengraphImage___localFile___children
+    seo___opengraphImage___localFile___ctime
+    seo___opengraphImage___localFile___ctimeMs
+    seo___opengraphImage___localFile___dev
+    seo___opengraphImage___localFile___dir
+    seo___opengraphImage___localFile___ext
+    seo___opengraphImage___localFile___extension
+    seo___opengraphImage___localFile___gid
+    seo___opengraphImage___localFile___id
+    seo___opengraphImage___localFile___ino
+    seo___opengraphImage___localFile___mode
+    seo___opengraphImage___localFile___modifiedTime
+    seo___opengraphImage___localFile___mtime
+    seo___opengraphImage___localFile___mtimeMs
+    seo___opengraphImage___localFile___name
+    seo___opengraphImage___localFile___nlink
+    seo___opengraphImage___localFile___prettySize
+    seo___opengraphImage___localFile___publicURL
+    seo___opengraphImage___localFile___rdev
+    seo___opengraphImage___localFile___relativeDirectory
+    seo___opengraphImage___localFile___relativePath
+    seo___opengraphImage___localFile___root
+    seo___opengraphImage___localFile___size
+    seo___opengraphImage___localFile___sourceInstanceName
+    seo___opengraphImage___localFile___uid
+    seo___opengraphImage___localFile___url
+    seo___opengraphImage___mediaDetails___file
+    seo___opengraphImage___mediaDetails___height
+    seo___opengraphImage___mediaDetails___sizes
+    seo___opengraphImage___mediaDetails___width
+    seo___opengraphImage___mediaItemUrl
+    seo___opengraphImage___mediaType
+    seo___opengraphImage___mimeType
+    seo___opengraphImage___modified
+    seo___opengraphImage___modifiedGmt
+    seo___opengraphImage___nodeType
+    seo___opengraphImage___parentDatabaseId
+    seo___opengraphImage___parentId
+    seo___opengraphImage___parent___children
+    seo___opengraphImage___parent___id
+    seo___opengraphImage___remoteFile___absolutePath
+    seo___opengraphImage___remoteFile___accessTime
+    seo___opengraphImage___remoteFile___atime
+    seo___opengraphImage___remoteFile___atimeMs
+    seo___opengraphImage___remoteFile___base
+    seo___opengraphImage___remoteFile___birthTime
+    seo___opengraphImage___remoteFile___birthtime
+    seo___opengraphImage___remoteFile___birthtimeMs
+    seo___opengraphImage___remoteFile___blksize
+    seo___opengraphImage___remoteFile___blocks
+    seo___opengraphImage___remoteFile___changeTime
+    seo___opengraphImage___remoteFile___children
+    seo___opengraphImage___remoteFile___ctime
+    seo___opengraphImage___remoteFile___ctimeMs
+    seo___opengraphImage___remoteFile___dev
+    seo___opengraphImage___remoteFile___dir
+    seo___opengraphImage___remoteFile___ext
+    seo___opengraphImage___remoteFile___extension
+    seo___opengraphImage___remoteFile___gid
+    seo___opengraphImage___remoteFile___id
+    seo___opengraphImage___remoteFile___ino
+    seo___opengraphImage___remoteFile___mode
+    seo___opengraphImage___remoteFile___modifiedTime
+    seo___opengraphImage___remoteFile___mtime
+    seo___opengraphImage___remoteFile___mtimeMs
+    seo___opengraphImage___remoteFile___name
+    seo___opengraphImage___remoteFile___nlink
+    seo___opengraphImage___remoteFile___prettySize
+    seo___opengraphImage___remoteFile___publicURL
+    seo___opengraphImage___remoteFile___rdev
+    seo___opengraphImage___remoteFile___relativeDirectory
+    seo___opengraphImage___remoteFile___relativePath
+    seo___opengraphImage___remoteFile___root
+    seo___opengraphImage___remoteFile___size
+    seo___opengraphImage___remoteFile___sourceInstanceName
+    seo___opengraphImage___remoteFile___uid
+    seo___opengraphImage___remoteFile___url
+    seo___opengraphImage___seo___breadcrumbs
+    seo___opengraphImage___seo___canonical
+    seo___opengraphImage___seo___focuskw
+    seo___opengraphImage___seo___metaDesc
+    seo___opengraphImage___seo___metaKeywords
+    seo___opengraphImage___seo___metaRobotsNofollow
+    seo___opengraphImage___seo___metaRobotsNoindex
+    seo___opengraphImage___seo___opengraphAuthor
+    seo___opengraphImage___seo___opengraphDescription
+    seo___opengraphImage___seo___opengraphModifiedTime
+    seo___opengraphImage___seo___opengraphPublishedTime
+    seo___opengraphImage___seo___opengraphPublisher
+    seo___opengraphImage___seo___opengraphSiteName
+    seo___opengraphImage___seo___opengraphTitle
+    seo___opengraphImage___seo___opengraphType
+    seo___opengraphImage___seo___opengraphUrl
+    seo___opengraphImage___seo___title
+    seo___opengraphImage___seo___twitterDescription
+    seo___opengraphImage___seo___twitterTitle
+    seo___opengraphImage___sizes
+    seo___opengraphImage___slug
+    seo___opengraphImage___sourceUrl
+    seo___opengraphImage___srcSet
+    seo___opengraphImage___status
+    seo___opengraphImage___terms___nodes
+    seo___opengraphImage___title
+    seo___opengraphImage___uri
+    seo___opengraphImage___wpChildren___nodes
+    seo___opengraphModifiedTime
+    seo___opengraphPublishedTime
+    seo___opengraphPublisher
+    seo___opengraphSiteName
+    seo___opengraphTitle
+    seo___opengraphType
+    seo___opengraphUrl
+    seo___title
+    seo___twitterDescription
+    seo___twitterImage___altText
+    seo___twitterImage___ancestors___nodes
+    seo___twitterImage___authorDatabaseId
+    seo___twitterImage___authorId
+    seo___twitterImage___caption
+    seo___twitterImage___children
+    seo___twitterImage___children___children
+    seo___twitterImage___children___id
+    seo___twitterImage___commentCount
+    seo___twitterImage___commentStatus
+    seo___twitterImage___comments___nodes
+    seo___twitterImage___databaseId
+    seo___twitterImage___date
+    seo___twitterImage___dateGmt
+    seo___twitterImage___description
+    seo___twitterImage___desiredSlug
+    seo___twitterImage___enclosure
+    seo___twitterImage___fileSize
+    seo___twitterImage___guid
+    seo___twitterImage___id
+    seo___twitterImage___internal___content
+    seo___twitterImage___internal___contentDigest
+    seo___twitterImage___internal___description
+    seo___twitterImage___internal___fieldOwners
+    seo___twitterImage___internal___ignoreType
+    seo___twitterImage___internal___mediaType
+    seo___twitterImage___internal___owner
+    seo___twitterImage___internal___type
+    seo___twitterImage___link
+    seo___twitterImage___localFile___absolutePath
+    seo___twitterImage___localFile___accessTime
+    seo___twitterImage___localFile___atime
+    seo___twitterImage___localFile___atimeMs
+    seo___twitterImage___localFile___base
+    seo___twitterImage___localFile___birthTime
+    seo___twitterImage___localFile___birthtime
+    seo___twitterImage___localFile___birthtimeMs
+    seo___twitterImage___localFile___blksize
+    seo___twitterImage___localFile___blocks
+    seo___twitterImage___localFile___changeTime
+    seo___twitterImage___localFile___children
+    seo___twitterImage___localFile___ctime
+    seo___twitterImage___localFile___ctimeMs
+    seo___twitterImage___localFile___dev
+    seo___twitterImage___localFile___dir
+    seo___twitterImage___localFile___ext
+    seo___twitterImage___localFile___extension
+    seo___twitterImage___localFile___gid
+    seo___twitterImage___localFile___id
+    seo___twitterImage___localFile___ino
+    seo___twitterImage___localFile___mode
+    seo___twitterImage___localFile___modifiedTime
+    seo___twitterImage___localFile___mtime
+    seo___twitterImage___localFile___mtimeMs
+    seo___twitterImage___localFile___name
+    seo___twitterImage___localFile___nlink
+    seo___twitterImage___localFile___prettySize
+    seo___twitterImage___localFile___publicURL
+    seo___twitterImage___localFile___rdev
+    seo___twitterImage___localFile___relativeDirectory
+    seo___twitterImage___localFile___relativePath
+    seo___twitterImage___localFile___root
+    seo___twitterImage___localFile___size
+    seo___twitterImage___localFile___sourceInstanceName
+    seo___twitterImage___localFile___uid
+    seo___twitterImage___localFile___url
+    seo___twitterImage___mediaDetails___file
+    seo___twitterImage___mediaDetails___height
+    seo___twitterImage___mediaDetails___sizes
+    seo___twitterImage___mediaDetails___width
+    seo___twitterImage___mediaItemUrl
+    seo___twitterImage___mediaType
+    seo___twitterImage___mimeType
+    seo___twitterImage___modified
+    seo___twitterImage___modifiedGmt
+    seo___twitterImage___nodeType
+    seo___twitterImage___parentDatabaseId
+    seo___twitterImage___parentId
+    seo___twitterImage___parent___children
+    seo___twitterImage___parent___id
+    seo___twitterImage___remoteFile___absolutePath
+    seo___twitterImage___remoteFile___accessTime
+    seo___twitterImage___remoteFile___atime
+    seo___twitterImage___remoteFile___atimeMs
+    seo___twitterImage___remoteFile___base
+    seo___twitterImage___remoteFile___birthTime
+    seo___twitterImage___remoteFile___birthtime
+    seo___twitterImage___remoteFile___birthtimeMs
+    seo___twitterImage___remoteFile___blksize
+    seo___twitterImage___remoteFile___blocks
+    seo___twitterImage___remoteFile___changeTime
+    seo___twitterImage___remoteFile___children
+    seo___twitterImage___remoteFile___ctime
+    seo___twitterImage___remoteFile___ctimeMs
+    seo___twitterImage___remoteFile___dev
+    seo___twitterImage___remoteFile___dir
+    seo___twitterImage___remoteFile___ext
+    seo___twitterImage___remoteFile___extension
+    seo___twitterImage___remoteFile___gid
+    seo___twitterImage___remoteFile___id
+    seo___twitterImage___remoteFile___ino
+    seo___twitterImage___remoteFile___mode
+    seo___twitterImage___remoteFile___modifiedTime
+    seo___twitterImage___remoteFile___mtime
+    seo___twitterImage___remoteFile___mtimeMs
+    seo___twitterImage___remoteFile___name
+    seo___twitterImage___remoteFile___nlink
+    seo___twitterImage___remoteFile___prettySize
+    seo___twitterImage___remoteFile___publicURL
+    seo___twitterImage___remoteFile___rdev
+    seo___twitterImage___remoteFile___relativeDirectory
+    seo___twitterImage___remoteFile___relativePath
+    seo___twitterImage___remoteFile___root
+    seo___twitterImage___remoteFile___size
+    seo___twitterImage___remoteFile___sourceInstanceName
+    seo___twitterImage___remoteFile___uid
+    seo___twitterImage___remoteFile___url
+    seo___twitterImage___seo___breadcrumbs
+    seo___twitterImage___seo___canonical
+    seo___twitterImage___seo___focuskw
+    seo___twitterImage___seo___metaDesc
+    seo___twitterImage___seo___metaKeywords
+    seo___twitterImage___seo___metaRobotsNofollow
+    seo___twitterImage___seo___metaRobotsNoindex
+    seo___twitterImage___seo___opengraphAuthor
+    seo___twitterImage___seo___opengraphDescription
+    seo___twitterImage___seo___opengraphModifiedTime
+    seo___twitterImage___seo___opengraphPublishedTime
+    seo___twitterImage___seo___opengraphPublisher
+    seo___twitterImage___seo___opengraphSiteName
+    seo___twitterImage___seo___opengraphTitle
+    seo___twitterImage___seo___opengraphType
+    seo___twitterImage___seo___opengraphUrl
+    seo___twitterImage___seo___title
+    seo___twitterImage___seo___twitterDescription
+    seo___twitterImage___seo___twitterTitle
+    seo___twitterImage___sizes
+    seo___twitterImage___slug
+    seo___twitterImage___sourceUrl
+    seo___twitterImage___srcSet
+    seo___twitterImage___status
+    seo___twitterImage___terms___nodes
+    seo___twitterImage___title
+    seo___twitterImage___uri
+    seo___twitterImage___wpChildren___nodes
+    seo___twitterTitle
     slug
     status
     tags___nodes
@@ -5822,6 +7795,25 @@ enum WpPostFieldsEnum {
     tags___nodes___parent___children
     tags___nodes___parent___id
     tags___nodes___posts___nodes
+    tags___nodes___seo___breadcrumbs
+    tags___nodes___seo___canonical
+    tags___nodes___seo___focuskw
+    tags___nodes___seo___metaDesc
+    tags___nodes___seo___metaKeywords
+    tags___nodes___seo___metaRobotsNofollow
+    tags___nodes___seo___metaRobotsNoindex
+    tags___nodes___seo___opengraphAuthor
+    tags___nodes___seo___opengraphDescription
+    tags___nodes___seo___opengraphModifiedTime
+    tags___nodes___seo___opengraphPublishedTime
+    tags___nodes___seo___opengraphPublisher
+    tags___nodes___seo___opengraphSiteName
+    tags___nodes___seo___opengraphTitle
+    tags___nodes___seo___opengraphType
+    tags___nodes___seo___opengraphUrl
+    tags___nodes___seo___title
+    tags___nodes___seo___twitterDescription
+    tags___nodes___seo___twitterTitle
     tags___nodes___slug
     tags___nodes___termGroupId
     tags___nodes___termTaxonomyId
@@ -5975,6 +7967,25 @@ enum WpPostFormatFieldsEnum {
     posts___nodes___pingStatus
     posts___nodes___pinged
     posts___nodes___postFormats___nodes
+    posts___nodes___seo___breadcrumbs
+    posts___nodes___seo___canonical
+    posts___nodes___seo___focuskw
+    posts___nodes___seo___metaDesc
+    posts___nodes___seo___metaKeywords
+    posts___nodes___seo___metaRobotsNofollow
+    posts___nodes___seo___metaRobotsNoindex
+    posts___nodes___seo___opengraphAuthor
+    posts___nodes___seo___opengraphDescription
+    posts___nodes___seo___opengraphModifiedTime
+    posts___nodes___seo___opengraphPublishedTime
+    posts___nodes___seo___opengraphPublisher
+    posts___nodes___seo___opengraphSiteName
+    posts___nodes___seo___opengraphTitle
+    posts___nodes___seo___opengraphType
+    posts___nodes___seo___opengraphUrl
+    posts___nodes___seo___title
+    posts___nodes___seo___twitterDescription
+    posts___nodes___seo___twitterTitle
     posts___nodes___slug
     posts___nodes___status
     posts___nodes___tags___nodes
@@ -5982,6 +7993,317 @@ enum WpPostFormatFieldsEnum {
     posts___nodes___title
     posts___nodes___toPing
     posts___nodes___uri
+    seo___breadcrumbs
+    seo___breadcrumbs___text
+    seo___breadcrumbs___url
+    seo___canonical
+    seo___focuskw
+    seo___metaDesc
+    seo___metaKeywords
+    seo___metaRobotsNofollow
+    seo___metaRobotsNoindex
+    seo___opengraphAuthor
+    seo___opengraphDescription
+    seo___opengraphImage___altText
+    seo___opengraphImage___ancestors___nodes
+    seo___opengraphImage___authorDatabaseId
+    seo___opengraphImage___authorId
+    seo___opengraphImage___caption
+    seo___opengraphImage___children
+    seo___opengraphImage___children___children
+    seo___opengraphImage___children___id
+    seo___opengraphImage___commentCount
+    seo___opengraphImage___commentStatus
+    seo___opengraphImage___comments___nodes
+    seo___opengraphImage___databaseId
+    seo___opengraphImage___date
+    seo___opengraphImage___dateGmt
+    seo___opengraphImage___description
+    seo___opengraphImage___desiredSlug
+    seo___opengraphImage___enclosure
+    seo___opengraphImage___fileSize
+    seo___opengraphImage___guid
+    seo___opengraphImage___id
+    seo___opengraphImage___internal___content
+    seo___opengraphImage___internal___contentDigest
+    seo___opengraphImage___internal___description
+    seo___opengraphImage___internal___fieldOwners
+    seo___opengraphImage___internal___ignoreType
+    seo___opengraphImage___internal___mediaType
+    seo___opengraphImage___internal___owner
+    seo___opengraphImage___internal___type
+    seo___opengraphImage___link
+    seo___opengraphImage___localFile___absolutePath
+    seo___opengraphImage___localFile___accessTime
+    seo___opengraphImage___localFile___atime
+    seo___opengraphImage___localFile___atimeMs
+    seo___opengraphImage___localFile___base
+    seo___opengraphImage___localFile___birthTime
+    seo___opengraphImage___localFile___birthtime
+    seo___opengraphImage___localFile___birthtimeMs
+    seo___opengraphImage___localFile___blksize
+    seo___opengraphImage___localFile___blocks
+    seo___opengraphImage___localFile___changeTime
+    seo___opengraphImage___localFile___children
+    seo___opengraphImage___localFile___ctime
+    seo___opengraphImage___localFile___ctimeMs
+    seo___opengraphImage___localFile___dev
+    seo___opengraphImage___localFile___dir
+    seo___opengraphImage___localFile___ext
+    seo___opengraphImage___localFile___extension
+    seo___opengraphImage___localFile___gid
+    seo___opengraphImage___localFile___id
+    seo___opengraphImage___localFile___ino
+    seo___opengraphImage___localFile___mode
+    seo___opengraphImage___localFile___modifiedTime
+    seo___opengraphImage___localFile___mtime
+    seo___opengraphImage___localFile___mtimeMs
+    seo___opengraphImage___localFile___name
+    seo___opengraphImage___localFile___nlink
+    seo___opengraphImage___localFile___prettySize
+    seo___opengraphImage___localFile___publicURL
+    seo___opengraphImage___localFile___rdev
+    seo___opengraphImage___localFile___relativeDirectory
+    seo___opengraphImage___localFile___relativePath
+    seo___opengraphImage___localFile___root
+    seo___opengraphImage___localFile___size
+    seo___opengraphImage___localFile___sourceInstanceName
+    seo___opengraphImage___localFile___uid
+    seo___opengraphImage___localFile___url
+    seo___opengraphImage___mediaDetails___file
+    seo___opengraphImage___mediaDetails___height
+    seo___opengraphImage___mediaDetails___sizes
+    seo___opengraphImage___mediaDetails___width
+    seo___opengraphImage___mediaItemUrl
+    seo___opengraphImage___mediaType
+    seo___opengraphImage___mimeType
+    seo___opengraphImage___modified
+    seo___opengraphImage___modifiedGmt
+    seo___opengraphImage___nodeType
+    seo___opengraphImage___parentDatabaseId
+    seo___opengraphImage___parentId
+    seo___opengraphImage___parent___children
+    seo___opengraphImage___parent___id
+    seo___opengraphImage___remoteFile___absolutePath
+    seo___opengraphImage___remoteFile___accessTime
+    seo___opengraphImage___remoteFile___atime
+    seo___opengraphImage___remoteFile___atimeMs
+    seo___opengraphImage___remoteFile___base
+    seo___opengraphImage___remoteFile___birthTime
+    seo___opengraphImage___remoteFile___birthtime
+    seo___opengraphImage___remoteFile___birthtimeMs
+    seo___opengraphImage___remoteFile___blksize
+    seo___opengraphImage___remoteFile___blocks
+    seo___opengraphImage___remoteFile___changeTime
+    seo___opengraphImage___remoteFile___children
+    seo___opengraphImage___remoteFile___ctime
+    seo___opengraphImage___remoteFile___ctimeMs
+    seo___opengraphImage___remoteFile___dev
+    seo___opengraphImage___remoteFile___dir
+    seo___opengraphImage___remoteFile___ext
+    seo___opengraphImage___remoteFile___extension
+    seo___opengraphImage___remoteFile___gid
+    seo___opengraphImage___remoteFile___id
+    seo___opengraphImage___remoteFile___ino
+    seo___opengraphImage___remoteFile___mode
+    seo___opengraphImage___remoteFile___modifiedTime
+    seo___opengraphImage___remoteFile___mtime
+    seo___opengraphImage___remoteFile___mtimeMs
+    seo___opengraphImage___remoteFile___name
+    seo___opengraphImage___remoteFile___nlink
+    seo___opengraphImage___remoteFile___prettySize
+    seo___opengraphImage___remoteFile___publicURL
+    seo___opengraphImage___remoteFile___rdev
+    seo___opengraphImage___remoteFile___relativeDirectory
+    seo___opengraphImage___remoteFile___relativePath
+    seo___opengraphImage___remoteFile___root
+    seo___opengraphImage___remoteFile___size
+    seo___opengraphImage___remoteFile___sourceInstanceName
+    seo___opengraphImage___remoteFile___uid
+    seo___opengraphImage___remoteFile___url
+    seo___opengraphImage___seo___breadcrumbs
+    seo___opengraphImage___seo___canonical
+    seo___opengraphImage___seo___focuskw
+    seo___opengraphImage___seo___metaDesc
+    seo___opengraphImage___seo___metaKeywords
+    seo___opengraphImage___seo___metaRobotsNofollow
+    seo___opengraphImage___seo___metaRobotsNoindex
+    seo___opengraphImage___seo___opengraphAuthor
+    seo___opengraphImage___seo___opengraphDescription
+    seo___opengraphImage___seo___opengraphModifiedTime
+    seo___opengraphImage___seo___opengraphPublishedTime
+    seo___opengraphImage___seo___opengraphPublisher
+    seo___opengraphImage___seo___opengraphSiteName
+    seo___opengraphImage___seo___opengraphTitle
+    seo___opengraphImage___seo___opengraphType
+    seo___opengraphImage___seo___opengraphUrl
+    seo___opengraphImage___seo___title
+    seo___opengraphImage___seo___twitterDescription
+    seo___opengraphImage___seo___twitterTitle
+    seo___opengraphImage___sizes
+    seo___opengraphImage___slug
+    seo___opengraphImage___sourceUrl
+    seo___opengraphImage___srcSet
+    seo___opengraphImage___status
+    seo___opengraphImage___terms___nodes
+    seo___opengraphImage___title
+    seo___opengraphImage___uri
+    seo___opengraphImage___wpChildren___nodes
+    seo___opengraphModifiedTime
+    seo___opengraphPublishedTime
+    seo___opengraphPublisher
+    seo___opengraphSiteName
+    seo___opengraphTitle
+    seo___opengraphType
+    seo___opengraphUrl
+    seo___title
+    seo___twitterDescription
+    seo___twitterImage___altText
+    seo___twitterImage___ancestors___nodes
+    seo___twitterImage___authorDatabaseId
+    seo___twitterImage___authorId
+    seo___twitterImage___caption
+    seo___twitterImage___children
+    seo___twitterImage___children___children
+    seo___twitterImage___children___id
+    seo___twitterImage___commentCount
+    seo___twitterImage___commentStatus
+    seo___twitterImage___comments___nodes
+    seo___twitterImage___databaseId
+    seo___twitterImage___date
+    seo___twitterImage___dateGmt
+    seo___twitterImage___description
+    seo___twitterImage___desiredSlug
+    seo___twitterImage___enclosure
+    seo___twitterImage___fileSize
+    seo___twitterImage___guid
+    seo___twitterImage___id
+    seo___twitterImage___internal___content
+    seo___twitterImage___internal___contentDigest
+    seo___twitterImage___internal___description
+    seo___twitterImage___internal___fieldOwners
+    seo___twitterImage___internal___ignoreType
+    seo___twitterImage___internal___mediaType
+    seo___twitterImage___internal___owner
+    seo___twitterImage___internal___type
+    seo___twitterImage___link
+    seo___twitterImage___localFile___absolutePath
+    seo___twitterImage___localFile___accessTime
+    seo___twitterImage___localFile___atime
+    seo___twitterImage___localFile___atimeMs
+    seo___twitterImage___localFile___base
+    seo___twitterImage___localFile___birthTime
+    seo___twitterImage___localFile___birthtime
+    seo___twitterImage___localFile___birthtimeMs
+    seo___twitterImage___localFile___blksize
+    seo___twitterImage___localFile___blocks
+    seo___twitterImage___localFile___changeTime
+    seo___twitterImage___localFile___children
+    seo___twitterImage___localFile___ctime
+    seo___twitterImage___localFile___ctimeMs
+    seo___twitterImage___localFile___dev
+    seo___twitterImage___localFile___dir
+    seo___twitterImage___localFile___ext
+    seo___twitterImage___localFile___extension
+    seo___twitterImage___localFile___gid
+    seo___twitterImage___localFile___id
+    seo___twitterImage___localFile___ino
+    seo___twitterImage___localFile___mode
+    seo___twitterImage___localFile___modifiedTime
+    seo___twitterImage___localFile___mtime
+    seo___twitterImage___localFile___mtimeMs
+    seo___twitterImage___localFile___name
+    seo___twitterImage___localFile___nlink
+    seo___twitterImage___localFile___prettySize
+    seo___twitterImage___localFile___publicURL
+    seo___twitterImage___localFile___rdev
+    seo___twitterImage___localFile___relativeDirectory
+    seo___twitterImage___localFile___relativePath
+    seo___twitterImage___localFile___root
+    seo___twitterImage___localFile___size
+    seo___twitterImage___localFile___sourceInstanceName
+    seo___twitterImage___localFile___uid
+    seo___twitterImage___localFile___url
+    seo___twitterImage___mediaDetails___file
+    seo___twitterImage___mediaDetails___height
+    seo___twitterImage___mediaDetails___sizes
+    seo___twitterImage___mediaDetails___width
+    seo___twitterImage___mediaItemUrl
+    seo___twitterImage___mediaType
+    seo___twitterImage___mimeType
+    seo___twitterImage___modified
+    seo___twitterImage___modifiedGmt
+    seo___twitterImage___nodeType
+    seo___twitterImage___parentDatabaseId
+    seo___twitterImage___parentId
+    seo___twitterImage___parent___children
+    seo___twitterImage___parent___id
+    seo___twitterImage___remoteFile___absolutePath
+    seo___twitterImage___remoteFile___accessTime
+    seo___twitterImage___remoteFile___atime
+    seo___twitterImage___remoteFile___atimeMs
+    seo___twitterImage___remoteFile___base
+    seo___twitterImage___remoteFile___birthTime
+    seo___twitterImage___remoteFile___birthtime
+    seo___twitterImage___remoteFile___birthtimeMs
+    seo___twitterImage___remoteFile___blksize
+    seo___twitterImage___remoteFile___blocks
+    seo___twitterImage___remoteFile___changeTime
+    seo___twitterImage___remoteFile___children
+    seo___twitterImage___remoteFile___ctime
+    seo___twitterImage___remoteFile___ctimeMs
+    seo___twitterImage___remoteFile___dev
+    seo___twitterImage___remoteFile___dir
+    seo___twitterImage___remoteFile___ext
+    seo___twitterImage___remoteFile___extension
+    seo___twitterImage___remoteFile___gid
+    seo___twitterImage___remoteFile___id
+    seo___twitterImage___remoteFile___ino
+    seo___twitterImage___remoteFile___mode
+    seo___twitterImage___remoteFile___modifiedTime
+    seo___twitterImage___remoteFile___mtime
+    seo___twitterImage___remoteFile___mtimeMs
+    seo___twitterImage___remoteFile___name
+    seo___twitterImage___remoteFile___nlink
+    seo___twitterImage___remoteFile___prettySize
+    seo___twitterImage___remoteFile___publicURL
+    seo___twitterImage___remoteFile___rdev
+    seo___twitterImage___remoteFile___relativeDirectory
+    seo___twitterImage___remoteFile___relativePath
+    seo___twitterImage___remoteFile___root
+    seo___twitterImage___remoteFile___size
+    seo___twitterImage___remoteFile___sourceInstanceName
+    seo___twitterImage___remoteFile___uid
+    seo___twitterImage___remoteFile___url
+    seo___twitterImage___seo___breadcrumbs
+    seo___twitterImage___seo___canonical
+    seo___twitterImage___seo___focuskw
+    seo___twitterImage___seo___metaDesc
+    seo___twitterImage___seo___metaKeywords
+    seo___twitterImage___seo___metaRobotsNofollow
+    seo___twitterImage___seo___metaRobotsNoindex
+    seo___twitterImage___seo___opengraphAuthor
+    seo___twitterImage___seo___opengraphDescription
+    seo___twitterImage___seo___opengraphModifiedTime
+    seo___twitterImage___seo___opengraphPublishedTime
+    seo___twitterImage___seo___opengraphPublisher
+    seo___twitterImage___seo___opengraphSiteName
+    seo___twitterImage___seo___opengraphTitle
+    seo___twitterImage___seo___opengraphType
+    seo___twitterImage___seo___opengraphUrl
+    seo___twitterImage___seo___title
+    seo___twitterImage___seo___twitterDescription
+    seo___twitterImage___seo___twitterTitle
+    seo___twitterImage___sizes
+    seo___twitterImage___slug
+    seo___twitterImage___sourceUrl
+    seo___twitterImage___srcSet
+    seo___twitterImage___status
+    seo___twitterImage___terms___nodes
+    seo___twitterImage___title
+    seo___twitterImage___uri
+    seo___twitterImage___wpChildren___nodes
+    seo___twitterTitle
     slug
     taxonomy___node___archivePath
     taxonomy___node___children
@@ -6154,6 +8476,25 @@ enum WpTagFieldsEnum {
     posts___nodes___pingStatus
     posts___nodes___pinged
     posts___nodes___postFormats___nodes
+    posts___nodes___seo___breadcrumbs
+    posts___nodes___seo___canonical
+    posts___nodes___seo___focuskw
+    posts___nodes___seo___metaDesc
+    posts___nodes___seo___metaKeywords
+    posts___nodes___seo___metaRobotsNofollow
+    posts___nodes___seo___metaRobotsNoindex
+    posts___nodes___seo___opengraphAuthor
+    posts___nodes___seo___opengraphDescription
+    posts___nodes___seo___opengraphModifiedTime
+    posts___nodes___seo___opengraphPublishedTime
+    posts___nodes___seo___opengraphPublisher
+    posts___nodes___seo___opengraphSiteName
+    posts___nodes___seo___opengraphTitle
+    posts___nodes___seo___opengraphType
+    posts___nodes___seo___opengraphUrl
+    posts___nodes___seo___title
+    posts___nodes___seo___twitterDescription
+    posts___nodes___seo___twitterTitle
     posts___nodes___slug
     posts___nodes___status
     posts___nodes___tags___nodes
@@ -6161,6 +8502,317 @@ enum WpTagFieldsEnum {
     posts___nodes___title
     posts___nodes___toPing
     posts___nodes___uri
+    seo___breadcrumbs
+    seo___breadcrumbs___text
+    seo___breadcrumbs___url
+    seo___canonical
+    seo___focuskw
+    seo___metaDesc
+    seo___metaKeywords
+    seo___metaRobotsNofollow
+    seo___metaRobotsNoindex
+    seo___opengraphAuthor
+    seo___opengraphDescription
+    seo___opengraphImage___altText
+    seo___opengraphImage___ancestors___nodes
+    seo___opengraphImage___authorDatabaseId
+    seo___opengraphImage___authorId
+    seo___opengraphImage___caption
+    seo___opengraphImage___children
+    seo___opengraphImage___children___children
+    seo___opengraphImage___children___id
+    seo___opengraphImage___commentCount
+    seo___opengraphImage___commentStatus
+    seo___opengraphImage___comments___nodes
+    seo___opengraphImage___databaseId
+    seo___opengraphImage___date
+    seo___opengraphImage___dateGmt
+    seo___opengraphImage___description
+    seo___opengraphImage___desiredSlug
+    seo___opengraphImage___enclosure
+    seo___opengraphImage___fileSize
+    seo___opengraphImage___guid
+    seo___opengraphImage___id
+    seo___opengraphImage___internal___content
+    seo___opengraphImage___internal___contentDigest
+    seo___opengraphImage___internal___description
+    seo___opengraphImage___internal___fieldOwners
+    seo___opengraphImage___internal___ignoreType
+    seo___opengraphImage___internal___mediaType
+    seo___opengraphImage___internal___owner
+    seo___opengraphImage___internal___type
+    seo___opengraphImage___link
+    seo___opengraphImage___localFile___absolutePath
+    seo___opengraphImage___localFile___accessTime
+    seo___opengraphImage___localFile___atime
+    seo___opengraphImage___localFile___atimeMs
+    seo___opengraphImage___localFile___base
+    seo___opengraphImage___localFile___birthTime
+    seo___opengraphImage___localFile___birthtime
+    seo___opengraphImage___localFile___birthtimeMs
+    seo___opengraphImage___localFile___blksize
+    seo___opengraphImage___localFile___blocks
+    seo___opengraphImage___localFile___changeTime
+    seo___opengraphImage___localFile___children
+    seo___opengraphImage___localFile___ctime
+    seo___opengraphImage___localFile___ctimeMs
+    seo___opengraphImage___localFile___dev
+    seo___opengraphImage___localFile___dir
+    seo___opengraphImage___localFile___ext
+    seo___opengraphImage___localFile___extension
+    seo___opengraphImage___localFile___gid
+    seo___opengraphImage___localFile___id
+    seo___opengraphImage___localFile___ino
+    seo___opengraphImage___localFile___mode
+    seo___opengraphImage___localFile___modifiedTime
+    seo___opengraphImage___localFile___mtime
+    seo___opengraphImage___localFile___mtimeMs
+    seo___opengraphImage___localFile___name
+    seo___opengraphImage___localFile___nlink
+    seo___opengraphImage___localFile___prettySize
+    seo___opengraphImage___localFile___publicURL
+    seo___opengraphImage___localFile___rdev
+    seo___opengraphImage___localFile___relativeDirectory
+    seo___opengraphImage___localFile___relativePath
+    seo___opengraphImage___localFile___root
+    seo___opengraphImage___localFile___size
+    seo___opengraphImage___localFile___sourceInstanceName
+    seo___opengraphImage___localFile___uid
+    seo___opengraphImage___localFile___url
+    seo___opengraphImage___mediaDetails___file
+    seo___opengraphImage___mediaDetails___height
+    seo___opengraphImage___mediaDetails___sizes
+    seo___opengraphImage___mediaDetails___width
+    seo___opengraphImage___mediaItemUrl
+    seo___opengraphImage___mediaType
+    seo___opengraphImage___mimeType
+    seo___opengraphImage___modified
+    seo___opengraphImage___modifiedGmt
+    seo___opengraphImage___nodeType
+    seo___opengraphImage___parentDatabaseId
+    seo___opengraphImage___parentId
+    seo___opengraphImage___parent___children
+    seo___opengraphImage___parent___id
+    seo___opengraphImage___remoteFile___absolutePath
+    seo___opengraphImage___remoteFile___accessTime
+    seo___opengraphImage___remoteFile___atime
+    seo___opengraphImage___remoteFile___atimeMs
+    seo___opengraphImage___remoteFile___base
+    seo___opengraphImage___remoteFile___birthTime
+    seo___opengraphImage___remoteFile___birthtime
+    seo___opengraphImage___remoteFile___birthtimeMs
+    seo___opengraphImage___remoteFile___blksize
+    seo___opengraphImage___remoteFile___blocks
+    seo___opengraphImage___remoteFile___changeTime
+    seo___opengraphImage___remoteFile___children
+    seo___opengraphImage___remoteFile___ctime
+    seo___opengraphImage___remoteFile___ctimeMs
+    seo___opengraphImage___remoteFile___dev
+    seo___opengraphImage___remoteFile___dir
+    seo___opengraphImage___remoteFile___ext
+    seo___opengraphImage___remoteFile___extension
+    seo___opengraphImage___remoteFile___gid
+    seo___opengraphImage___remoteFile___id
+    seo___opengraphImage___remoteFile___ino
+    seo___opengraphImage___remoteFile___mode
+    seo___opengraphImage___remoteFile___modifiedTime
+    seo___opengraphImage___remoteFile___mtime
+    seo___opengraphImage___remoteFile___mtimeMs
+    seo___opengraphImage___remoteFile___name
+    seo___opengraphImage___remoteFile___nlink
+    seo___opengraphImage___remoteFile___prettySize
+    seo___opengraphImage___remoteFile___publicURL
+    seo___opengraphImage___remoteFile___rdev
+    seo___opengraphImage___remoteFile___relativeDirectory
+    seo___opengraphImage___remoteFile___relativePath
+    seo___opengraphImage___remoteFile___root
+    seo___opengraphImage___remoteFile___size
+    seo___opengraphImage___remoteFile___sourceInstanceName
+    seo___opengraphImage___remoteFile___uid
+    seo___opengraphImage___remoteFile___url
+    seo___opengraphImage___seo___breadcrumbs
+    seo___opengraphImage___seo___canonical
+    seo___opengraphImage___seo___focuskw
+    seo___opengraphImage___seo___metaDesc
+    seo___opengraphImage___seo___metaKeywords
+    seo___opengraphImage___seo___metaRobotsNofollow
+    seo___opengraphImage___seo___metaRobotsNoindex
+    seo___opengraphImage___seo___opengraphAuthor
+    seo___opengraphImage___seo___opengraphDescription
+    seo___opengraphImage___seo___opengraphModifiedTime
+    seo___opengraphImage___seo___opengraphPublishedTime
+    seo___opengraphImage___seo___opengraphPublisher
+    seo___opengraphImage___seo___opengraphSiteName
+    seo___opengraphImage___seo___opengraphTitle
+    seo___opengraphImage___seo___opengraphType
+    seo___opengraphImage___seo___opengraphUrl
+    seo___opengraphImage___seo___title
+    seo___opengraphImage___seo___twitterDescription
+    seo___opengraphImage___seo___twitterTitle
+    seo___opengraphImage___sizes
+    seo___opengraphImage___slug
+    seo___opengraphImage___sourceUrl
+    seo___opengraphImage___srcSet
+    seo___opengraphImage___status
+    seo___opengraphImage___terms___nodes
+    seo___opengraphImage___title
+    seo___opengraphImage___uri
+    seo___opengraphImage___wpChildren___nodes
+    seo___opengraphModifiedTime
+    seo___opengraphPublishedTime
+    seo___opengraphPublisher
+    seo___opengraphSiteName
+    seo___opengraphTitle
+    seo___opengraphType
+    seo___opengraphUrl
+    seo___title
+    seo___twitterDescription
+    seo___twitterImage___altText
+    seo___twitterImage___ancestors___nodes
+    seo___twitterImage___authorDatabaseId
+    seo___twitterImage___authorId
+    seo___twitterImage___caption
+    seo___twitterImage___children
+    seo___twitterImage___children___children
+    seo___twitterImage___children___id
+    seo___twitterImage___commentCount
+    seo___twitterImage___commentStatus
+    seo___twitterImage___comments___nodes
+    seo___twitterImage___databaseId
+    seo___twitterImage___date
+    seo___twitterImage___dateGmt
+    seo___twitterImage___description
+    seo___twitterImage___desiredSlug
+    seo___twitterImage___enclosure
+    seo___twitterImage___fileSize
+    seo___twitterImage___guid
+    seo___twitterImage___id
+    seo___twitterImage___internal___content
+    seo___twitterImage___internal___contentDigest
+    seo___twitterImage___internal___description
+    seo___twitterImage___internal___fieldOwners
+    seo___twitterImage___internal___ignoreType
+    seo___twitterImage___internal___mediaType
+    seo___twitterImage___internal___owner
+    seo___twitterImage___internal___type
+    seo___twitterImage___link
+    seo___twitterImage___localFile___absolutePath
+    seo___twitterImage___localFile___accessTime
+    seo___twitterImage___localFile___atime
+    seo___twitterImage___localFile___atimeMs
+    seo___twitterImage___localFile___base
+    seo___twitterImage___localFile___birthTime
+    seo___twitterImage___localFile___birthtime
+    seo___twitterImage___localFile___birthtimeMs
+    seo___twitterImage___localFile___blksize
+    seo___twitterImage___localFile___blocks
+    seo___twitterImage___localFile___changeTime
+    seo___twitterImage___localFile___children
+    seo___twitterImage___localFile___ctime
+    seo___twitterImage___localFile___ctimeMs
+    seo___twitterImage___localFile___dev
+    seo___twitterImage___localFile___dir
+    seo___twitterImage___localFile___ext
+    seo___twitterImage___localFile___extension
+    seo___twitterImage___localFile___gid
+    seo___twitterImage___localFile___id
+    seo___twitterImage___localFile___ino
+    seo___twitterImage___localFile___mode
+    seo___twitterImage___localFile___modifiedTime
+    seo___twitterImage___localFile___mtime
+    seo___twitterImage___localFile___mtimeMs
+    seo___twitterImage___localFile___name
+    seo___twitterImage___localFile___nlink
+    seo___twitterImage___localFile___prettySize
+    seo___twitterImage___localFile___publicURL
+    seo___twitterImage___localFile___rdev
+    seo___twitterImage___localFile___relativeDirectory
+    seo___twitterImage___localFile___relativePath
+    seo___twitterImage___localFile___root
+    seo___twitterImage___localFile___size
+    seo___twitterImage___localFile___sourceInstanceName
+    seo___twitterImage___localFile___uid
+    seo___twitterImage___localFile___url
+    seo___twitterImage___mediaDetails___file
+    seo___twitterImage___mediaDetails___height
+    seo___twitterImage___mediaDetails___sizes
+    seo___twitterImage___mediaDetails___width
+    seo___twitterImage___mediaItemUrl
+    seo___twitterImage___mediaType
+    seo___twitterImage___mimeType
+    seo___twitterImage___modified
+    seo___twitterImage___modifiedGmt
+    seo___twitterImage___nodeType
+    seo___twitterImage___parentDatabaseId
+    seo___twitterImage___parentId
+    seo___twitterImage___parent___children
+    seo___twitterImage___parent___id
+    seo___twitterImage___remoteFile___absolutePath
+    seo___twitterImage___remoteFile___accessTime
+    seo___twitterImage___remoteFile___atime
+    seo___twitterImage___remoteFile___atimeMs
+    seo___twitterImage___remoteFile___base
+    seo___twitterImage___remoteFile___birthTime
+    seo___twitterImage___remoteFile___birthtime
+    seo___twitterImage___remoteFile___birthtimeMs
+    seo___twitterImage___remoteFile___blksize
+    seo___twitterImage___remoteFile___blocks
+    seo___twitterImage___remoteFile___changeTime
+    seo___twitterImage___remoteFile___children
+    seo___twitterImage___remoteFile___ctime
+    seo___twitterImage___remoteFile___ctimeMs
+    seo___twitterImage___remoteFile___dev
+    seo___twitterImage___remoteFile___dir
+    seo___twitterImage___remoteFile___ext
+    seo___twitterImage___remoteFile___extension
+    seo___twitterImage___remoteFile___gid
+    seo___twitterImage___remoteFile___id
+    seo___twitterImage___remoteFile___ino
+    seo___twitterImage___remoteFile___mode
+    seo___twitterImage___remoteFile___modifiedTime
+    seo___twitterImage___remoteFile___mtime
+    seo___twitterImage___remoteFile___mtimeMs
+    seo___twitterImage___remoteFile___name
+    seo___twitterImage___remoteFile___nlink
+    seo___twitterImage___remoteFile___prettySize
+    seo___twitterImage___remoteFile___publicURL
+    seo___twitterImage___remoteFile___rdev
+    seo___twitterImage___remoteFile___relativeDirectory
+    seo___twitterImage___remoteFile___relativePath
+    seo___twitterImage___remoteFile___root
+    seo___twitterImage___remoteFile___size
+    seo___twitterImage___remoteFile___sourceInstanceName
+    seo___twitterImage___remoteFile___uid
+    seo___twitterImage___remoteFile___url
+    seo___twitterImage___seo___breadcrumbs
+    seo___twitterImage___seo___canonical
+    seo___twitterImage___seo___focuskw
+    seo___twitterImage___seo___metaDesc
+    seo___twitterImage___seo___metaKeywords
+    seo___twitterImage___seo___metaRobotsNofollow
+    seo___twitterImage___seo___metaRobotsNoindex
+    seo___twitterImage___seo___opengraphAuthor
+    seo___twitterImage___seo___opengraphDescription
+    seo___twitterImage___seo___opengraphModifiedTime
+    seo___twitterImage___seo___opengraphPublishedTime
+    seo___twitterImage___seo___opengraphPublisher
+    seo___twitterImage___seo___opengraphSiteName
+    seo___twitterImage___seo___opengraphTitle
+    seo___twitterImage___seo___opengraphType
+    seo___twitterImage___seo___opengraphUrl
+    seo___twitterImage___seo___title
+    seo___twitterImage___seo___twitterDescription
+    seo___twitterImage___seo___twitterTitle
+    seo___twitterImage___sizes
+    seo___twitterImage___slug
+    seo___twitterImage___sourceUrl
+    seo___twitterImage___srcSet
+    seo___twitterImage___status
+    seo___twitterImage___terms___nodes
+    seo___twitterImage___title
+    seo___twitterImage___uri
+    seo___twitterImage___wpChildren___nodes
+    seo___twitterTitle
     slug
     taxonomy___node___archivePath
     taxonomy___node___children
@@ -6509,6 +9161,8 @@ enum WpUserFieldsEnum {
     pages___nodes___featuredImageDatabaseId
     pages___nodes___featuredImageId
     pages___nodes___guid
+    pages___nodes___homepageMetaboxes___fieldGroupName
+    pages___nodes___homepageMetaboxes___heroText
     pages___nodes___id
     pages___nodes___internal___content
     pages___nodes___internal___contentDigest
@@ -6526,10 +9180,30 @@ enum WpUserFieldsEnum {
     pages___nodes___modified
     pages___nodes___modifiedGmt
     pages___nodes___nodeType
+    pages___nodes___pageTemplate
     pages___nodes___parentDatabaseId
     pages___nodes___parentId
     pages___nodes___parent___children
     pages___nodes___parent___id
+    pages___nodes___seo___breadcrumbs
+    pages___nodes___seo___canonical
+    pages___nodes___seo___focuskw
+    pages___nodes___seo___metaDesc
+    pages___nodes___seo___metaKeywords
+    pages___nodes___seo___metaRobotsNofollow
+    pages___nodes___seo___metaRobotsNoindex
+    pages___nodes___seo___opengraphAuthor
+    pages___nodes___seo___opengraphDescription
+    pages___nodes___seo___opengraphModifiedTime
+    pages___nodes___seo___opengraphPublishedTime
+    pages___nodes___seo___opengraphPublisher
+    pages___nodes___seo___opengraphSiteName
+    pages___nodes___seo___opengraphTitle
+    pages___nodes___seo___opengraphType
+    pages___nodes___seo___opengraphUrl
+    pages___nodes___seo___title
+    pages___nodes___seo___twitterDescription
+    pages___nodes___seo___twitterTitle
     pages___nodes___slug
     pages___nodes___status
     pages___nodes___terms___nodes
@@ -6613,6 +9287,25 @@ enum WpUserFieldsEnum {
     posts___nodes___pingStatus
     posts___nodes___pinged
     posts___nodes___postFormats___nodes
+    posts___nodes___seo___breadcrumbs
+    posts___nodes___seo___canonical
+    posts___nodes___seo___focuskw
+    posts___nodes___seo___metaDesc
+    posts___nodes___seo___metaKeywords
+    posts___nodes___seo___metaRobotsNofollow
+    posts___nodes___seo___metaRobotsNoindex
+    posts___nodes___seo___opengraphAuthor
+    posts___nodes___seo___opengraphDescription
+    posts___nodes___seo___opengraphModifiedTime
+    posts___nodes___seo___opengraphPublishedTime
+    posts___nodes___seo___opengraphPublisher
+    posts___nodes___seo___opengraphSiteName
+    posts___nodes___seo___opengraphTitle
+    posts___nodes___seo___opengraphType
+    posts___nodes___seo___opengraphUrl
+    posts___nodes___seo___title
+    posts___nodes___seo___twitterDescription
+    posts___nodes___seo___twitterTitle
     posts___nodes___slug
     posts___nodes___status
     posts___nodes___tags___nodes
@@ -6640,6 +9333,19 @@ enum WpUserFieldsEnum {
     roles___nodes___nodeType
     roles___nodes___parent___children
     roles___nodes___parent___id
+    seo___metaDesc
+    seo___metaRobotsNofollow
+    seo___metaRobotsNoindex
+    seo___social___facebook
+    seo___social___instagram
+    seo___social___linkedIn
+    seo___social___mySpace
+    seo___social___pinterest
+    seo___social___soundCloud
+    seo___social___twitter
+    seo___social___wikipedia
+    seo___social___youTube
+    seo___title
     slug
     uri
     url
@@ -7034,11 +9740,67 @@ input SiteFilterInput {
     siteMetadata: SiteSiteMetadataFilterInput
 }
 
+input SitePageContextDataAuthorFilterInput {
+    node: SitePageContextDataAuthorNodeFilterInput
+}
+
+input SitePageContextDataAuthorNodeFilterInput {
+    name: StringQueryOperatorInput
+}
+
+input SitePageContextDataFeaturedImageFilterInput {
+    node: SitePageContextDataFeaturedImageNodeFilterInput
+}
+
+input SitePageContextDataFeaturedImageNodeFilterInput {
+    localFile: SitePageContextDataFeaturedImageNodeLocalFileFilterInput
+}
+
+input SitePageContextDataFeaturedImageNodeLocalFileChildImageSharpFilterInput {
+    fixed: SitePageContextDataFeaturedImageNodeLocalFileChildImageSharpFixedFilterInput
+}
+
+input SitePageContextDataFeaturedImageNodeLocalFileChildImageSharpFixedFilterInput {
+    base64: StringQueryOperatorInput
+    height: IntQueryOperatorInput
+    src: StringQueryOperatorInput
+    srcSet: StringQueryOperatorInput
+    width: IntQueryOperatorInput
+}
+
+input SitePageContextDataFeaturedImageNodeLocalFileFilterInput {
+    childImageSharp: SitePageContextDataFeaturedImageNodeLocalFileChildImageSharpFilterInput
+}
+
+input SitePageContextDataFilterInput {
+    author: SitePageContextDataAuthorFilterInput
+    content: StringQueryOperatorInput
+    date: StringQueryOperatorInput
+    featuredImage: SitePageContextDataFeaturedImageFilterInput
+    seo: SitePageContextDataSeoFilterInput
+    status: StringQueryOperatorInput
+    title: StringQueryOperatorInput
+    uri: StringQueryOperatorInput
+}
+
+input SitePageContextDataSeoFilterInput {
+    metaDesc: StringQueryOperatorInput
+    opengraphDescription: StringQueryOperatorInput
+    opengraphTitle: StringQueryOperatorInput
+    opengraphType: StringQueryOperatorInput
+    title: StringQueryOperatorInput
+}
+
+input SitePageContextFilterInput {
+    data: SitePageContextDataFilterInput
+}
+
 input SitePageFilterInput {
     children: NodeFilterListInput
     component: StringQueryOperatorInput
     componentChunkName: StringQueryOperatorInput
     componentPath: StringQueryOperatorInput
+    context: SitePageContextFilterInput
     id: StringQueryOperatorInput
     internal: InternalFilterInput
     internalComponentName: StringQueryOperatorInput
@@ -7136,7 +9898,9 @@ input SitePluginSortInput {
 input SiteSiteMetadataFilterInput {
     author: StringQueryOperatorInput
     description: StringQueryOperatorInput
+    lang: StringQueryOperatorInput
     title: StringQueryOperatorInput
+    url: StringQueryOperatorInput
 }
 
 input SiteSortInput {
@@ -7181,6 +9945,7 @@ input WpCategoryFilterInput {
     parentDatabaseId: IntQueryOperatorInput
     parentId: IDQueryOperatorInput
     posts: WpCategoryToPostConnectionFilterInput
+    seo: WpSEOFilterInput
     slug: StringQueryOperatorInput
     taxonomy: WpCategoryToTaxonomyConnectionEdgeFilterInput
     termGroupId: IntQueryOperatorInput
@@ -7378,6 +10143,7 @@ input WpFilterInput {
     nodeType: StringQueryOperatorInput
     parent: NodeFilterInput
     readingSettings: WpReadingSettingsFilterInput
+    seo: WpSEOConfigFilterInput
     writingSettings: WpWritingSettingsFilterInput
 }
 
@@ -7445,6 +10211,7 @@ input WpMediaItemFilterInput {
     parentDatabaseId: IntQueryOperatorInput
     parentId: IDQueryOperatorInput
     remoteFile: FileFilterInput
+    seo: WpSEOFilterInput
     sizes: StringQueryOperatorInput
     slug: StringQueryOperatorInput
     sourceUrl: StringQueryOperatorInput
@@ -7608,6 +10375,7 @@ input WpPageFilterInput {
     featuredImageDatabaseId: IntQueryOperatorInput
     featuredImageId: IDQueryOperatorInput
     guid: StringQueryOperatorInput
+    homepageMetaboxes: WpPage_HomepagemetaboxesFilterInput
     id: StringQueryOperatorInput
     internal: InternalFilterInput
     isFrontPage: BooleanQueryOperatorInput
@@ -7619,9 +10387,11 @@ input WpPageFilterInput {
     modified: DateQueryOperatorInput
     modifiedGmt: DateQueryOperatorInput
     nodeType: StringQueryOperatorInput
+    pageTemplate: StringQueryOperatorInput
     parent: NodeFilterInput
     parentDatabaseId: IntQueryOperatorInput
     parentId: IDQueryOperatorInput
+    seo: WpSEOFilterInput
     slug: StringQueryOperatorInput
     status: StringQueryOperatorInput
     terms: WpContentNodeToTermNodeConnectionFilterInput
@@ -7646,6 +10416,12 @@ input WpPageToCommentConnectionFilterInput {
 
 input WpPageToContentTypeConnectionEdgeFilterInput {
     node: WpContentTypeFilterInput
+}
+
+input WpPage_HomepagemetaboxesFilterInput {
+    fieldGroupName: StringQueryOperatorInput
+    heroImage: WpMediaItemFilterInput
+    heroText: StringQueryOperatorInput
 }
 
 input WpPostFilterInput {
@@ -7681,6 +10457,7 @@ input WpPostFilterInput {
     pingStatus: StringQueryOperatorInput
     pinged: StringQueryOperatorInput
     postFormats: WpPostToPostFormatConnectionFilterInput
+    seo: WpSEOFilterInput
     slug: StringQueryOperatorInput
     status: StringQueryOperatorInput
     tags: WpPostToTagConnectionFilterInput
@@ -7706,6 +10483,7 @@ input WpPostFormatFilterInput {
     nodeType: StringQueryOperatorInput
     parent: NodeFilterInput
     posts: WpPostFormatToPostConnectionFilterInput
+    seo: WpSEOFilterInput
     slug: StringQueryOperatorInput
     taxonomy: WpPostFormatToTaxonomyConnectionEdgeFilterInput
     termGroupId: IntQueryOperatorInput
@@ -7787,6 +10565,166 @@ input WpReadingSettingsFilterInput {
     postsPerPage: IntQueryOperatorInput
 }
 
+input WpSEOBreadcrumbsFilterInput {
+    archivePrefix: StringQueryOperatorInput
+    boldLast: BooleanQueryOperatorInput
+    enabled: BooleanQueryOperatorInput
+    homeText: StringQueryOperatorInput
+    notFoundText: StringQueryOperatorInput
+    prefix: StringQueryOperatorInput
+    searchPrefix: StringQueryOperatorInput
+    separator: StringQueryOperatorInput
+    showBlogPage: BooleanQueryOperatorInput
+}
+
+input WpSEOConfigFilterInput {
+    breadcrumbs: WpSEOBreadcrumbsFilterInput
+    openGraph: WpSEOOpenGraphFilterInput
+    redirects: WpSEORedirectFilterListInput
+    schema: WpSEOSchemaFilterInput
+    social: WpSEOSocialFilterInput
+    webmaster: WpSEOWebmasterFilterInput
+}
+
+input WpSEOFilterInput {
+    breadcrumbs: WpSEOPostTypeBreadcrumbsFilterListInput
+    canonical: StringQueryOperatorInput
+    focuskw: StringQueryOperatorInput
+    metaDesc: StringQueryOperatorInput
+    metaKeywords: StringQueryOperatorInput
+    metaRobotsNofollow: StringQueryOperatorInput
+    metaRobotsNoindex: StringQueryOperatorInput
+    opengraphAuthor: StringQueryOperatorInput
+    opengraphDescription: StringQueryOperatorInput
+    opengraphImage: WpMediaItemFilterInput
+    opengraphModifiedTime: StringQueryOperatorInput
+    opengraphPublishedTime: StringQueryOperatorInput
+    opengraphPublisher: StringQueryOperatorInput
+    opengraphSiteName: StringQueryOperatorInput
+    opengraphTitle: StringQueryOperatorInput
+    opengraphType: StringQueryOperatorInput
+    opengraphUrl: StringQueryOperatorInput
+    title: StringQueryOperatorInput
+    twitterDescription: StringQueryOperatorInput
+    twitterImage: WpMediaItemFilterInput
+    twitterTitle: StringQueryOperatorInput
+}
+
+input WpSEOOpenGraphFilterInput {
+    defaultImage: WpMediaItemFilterInput
+    frontPage: WpSEOOpenGraphFrontPageFilterInput
+}
+
+input WpSEOOpenGraphFrontPageFilterInput {
+    description: StringQueryOperatorInput
+    image: WpMediaItemFilterInput
+    title: StringQueryOperatorInput
+}
+
+input WpSEOPostTypeBreadcrumbsFilterInput {
+    text: StringQueryOperatorInput
+    url: StringQueryOperatorInput
+}
+
+input WpSEOPostTypeBreadcrumbsFilterListInput {
+    elemMatch: WpSEOPostTypeBreadcrumbsFilterInput
+}
+
+input WpSEORedirectFilterInput {
+    format: StringQueryOperatorInput
+    origin: StringQueryOperatorInput
+    target: StringQueryOperatorInput
+    type: IntQueryOperatorInput
+}
+
+input WpSEORedirectFilterListInput {
+    elemMatch: WpSEORedirectFilterInput
+}
+
+input WpSEOSchemaFilterInput {
+    companyLogo: WpMediaItemFilterInput
+    companyName: StringQueryOperatorInput
+    companyOrPerson: StringQueryOperatorInput
+    inLanguage: StringQueryOperatorInput
+    logo: WpMediaItemFilterInput
+    personLogo: WpMediaItemFilterInput
+    siteName: StringQueryOperatorInput
+    siteUrl: StringQueryOperatorInput
+    wordpressSiteName: StringQueryOperatorInput
+}
+
+input WpSEOSocialFacebookFilterInput {
+    defaultImage: WpMediaItemFilterInput
+    url: StringQueryOperatorInput
+}
+
+input WpSEOSocialFilterInput {
+    facebook: WpSEOSocialFacebookFilterInput
+    instagram: WpSEOSocialInstagramFilterInput
+    linkedIn: WpSEOSocialLinkedInFilterInput
+    mySpace: WpSEOSocialMySpaceFilterInput
+    pinterest: WpSEOSocialPinterestFilterInput
+    twitter: WpSEOSocialTwitterFilterInput
+    wikipedia: WpSEOSocialWikipediaFilterInput
+    youTube: WpSEOSocialYoutubeFilterInput
+}
+
+input WpSEOSocialInstagramFilterInput {
+    url: StringQueryOperatorInput
+}
+
+input WpSEOSocialLinkedInFilterInput {
+    url: StringQueryOperatorInput
+}
+
+input WpSEOSocialMySpaceFilterInput {
+    url: StringQueryOperatorInput
+}
+
+input WpSEOSocialPinterestFilterInput {
+    metaTag: StringQueryOperatorInput
+    url: StringQueryOperatorInput
+}
+
+input WpSEOSocialTwitterFilterInput {
+    username: StringQueryOperatorInput
+}
+
+input WpSEOSocialWikipediaFilterInput {
+    url: StringQueryOperatorInput
+}
+
+input WpSEOSocialYoutubeFilterInput {
+    url: StringQueryOperatorInput
+}
+
+input WpSEOUserFilterInput {
+    metaDesc: StringQueryOperatorInput
+    metaRobotsNofollow: StringQueryOperatorInput
+    metaRobotsNoindex: StringQueryOperatorInput
+    social: WpSEOUserSocialFilterInput
+    title: StringQueryOperatorInput
+}
+
+input WpSEOUserSocialFilterInput {
+    facebook: StringQueryOperatorInput
+    instagram: StringQueryOperatorInput
+    linkedIn: StringQueryOperatorInput
+    mySpace: StringQueryOperatorInput
+    pinterest: StringQueryOperatorInput
+    soundCloud: StringQueryOperatorInput
+    twitter: StringQueryOperatorInput
+    wikipedia: StringQueryOperatorInput
+    youTube: StringQueryOperatorInput
+}
+
+input WpSEOWebmasterFilterInput {
+    baiduVerify: StringQueryOperatorInput
+    googleVerify: StringQueryOperatorInput
+    msVerify: StringQueryOperatorInput
+    yandexVerify: StringQueryOperatorInput
+}
+
 input WpSettingsFilterInput {
     discussionSettingsDefaultCommentStatus: StringQueryOperatorInput
     discussionSettingsDefaultPingStatus: StringQueryOperatorInput
@@ -7822,6 +10760,7 @@ input WpTagFilterInput {
     nodeType: StringQueryOperatorInput
     parent: NodeFilterInput
     posts: WpTagToPostConnectionFilterInput
+    seo: WpSEOFilterInput
     slug: StringQueryOperatorInput
     taxonomy: WpTagToTaxonomyConnectionEdgeFilterInput
     termGroupId: IntQueryOperatorInput
@@ -7933,6 +10872,7 @@ input WpUserFilterInput {
     posts: WpUserToPostConnectionFilterInput
     registeredDate: StringQueryOperatorInput
     roles: WpUserToUserRoleConnectionFilterInput
+    seo: WpSEOUserFilterInput
     slug: StringQueryOperatorInput
     uri: StringQueryOperatorInput
     url: StringQueryOperatorInput
