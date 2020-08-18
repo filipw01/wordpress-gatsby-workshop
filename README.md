@@ -104,8 +104,8 @@ Check if you can see the data in GraphiQL
 Let's get familiar with GraphQL. This is our query for posts
 
 ```gql
-query {
-  allWpPost {
+{
+  allWpPost(filter: {status: {eq: "publish"}}, sort: {fields: date, order: DESC}) {
     nodes {
       author {
         node {
@@ -113,22 +113,28 @@ query {
         }
       }
       title
-      status
       date(locale: "pl", fromNow: true)
       featuredImage {
         node {
           localFile {
             childImageSharp {
-              id
+              fixed(width: 400, height: 400) {
+                base64
+                width
+                height
+                src
+                srcSet
+              }
             }
           }
         }
       }
       uri
-      excerpt
+      content
     }
   }
 }
+
 ```
 
 In `gatsby-node.js` use 
@@ -159,17 +165,19 @@ For template use
 ```jsx
 import React from "react"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Article = ({ pageContext }) => {
-  const { title, excerpt } = pageContext.data
+  const { title, content, featuredImage } = pageContext.data
   return (
     <Layout>
       <SEO title={title} />
+      <Img fixed={featuredImage.node.localFile.childImageSharp.fixed} />
       <h1>{title}</h1>
-      <p dangerouslySetInnerHTML={{ __html: excerpt }}></p>
+      <p dangerouslySetInnerHTML={{ __html: content }} />
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
@@ -177,3 +185,7 @@ const Article = ({ pageContext }) => {
 
 export default Article
 ```
+
+Clarify any doubts regarding React and JavaScript
+
+Now create blog tiles on homepage

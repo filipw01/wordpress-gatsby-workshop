@@ -19,18 +19,25 @@ exports.createPages = async ({ graphql, actions }) => {
             node {
               localFile {
                 childImageSharp {
-                  id
+                  fixed(width: 400, height: 400) {
+                    base64
+                    width
+                    height
+                    src
+                    srcSet
+                  }
                 }
               }
             }
           }
           uri
-          excerpt
+          content
         }
       }
     }
   `)
 
+  console.log(postsData)
   postsData.data.allWpPost.nodes.forEach(node => {
     createPage({
       path: `${node.uri}`,
