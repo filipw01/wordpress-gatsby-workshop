@@ -188,4 +188,10 @@ export default Article
 
 Clarify any doubts regarding React and JavaScript
 
-Now create blog tiles on homepage
+Make sure `gatsby-image`, `Link`, `dangerouslySetInnerHTML`, `Layout` and `SEO` is clear.
+
+Now create blog tiles on homepage with CSS modules
+
+## Pull data from Yoast SEO
+
+
