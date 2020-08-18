@@ -289,6 +289,20 @@ jobs:
           command: scp -r public/* "$SSH_USER@$SSH_HOST:/home/blueowlp/domains/techblog.com/public_html/"
 ```
 
+To enable status badge fill these two variables with the data (it is a good idea to load the token from `.env` file
+especially if repository is public)
+```php
+$ciUrl = 'https://circleci.com/<vcs-type>/<org>/<repo>';
+$ciToken = 'CIRCLE_API_USER_TOKEN';
+```
+To trigger rebuild and deploy right from WordPress add CircleCI webhook url and set method to
+`POST` in `Settings -> Deployments`
+
+Example webhook url
+```
+https://circleci.com/api/v1.1/project/<vcs-type>/<org>/<repo>/tree/<branch>?circle-token=<CIRCLE_API_USER_TOKEN>
+```
+
 ## My reflections
 
 The old vs the new gatsby-source-wordpress plugin
